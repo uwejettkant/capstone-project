@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import Tasks from './tasks'
 import GlobalStyles from './globalStyles'
 import Header from './header'
@@ -9,9 +9,8 @@ export default function App() {
     <>
       <Header />
       <GlobalStyles />
-        <Tasks />
+      <Tasks />
       <Footer />
     </>
-  );
+  )
 }
-

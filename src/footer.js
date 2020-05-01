@@ -1,9 +1,13 @@
 import React from 'react'
+import styled from 'styled-components/macro'
 
 export default function footer() {
-    return (
-        <div>
-            
-        </div>
-    )
+  return <FooterStyled></FooterStyled>
 }
+
+const FooterStyled = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+`
