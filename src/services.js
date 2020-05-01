@@ -2,7 +2,8 @@ const userTasks = [
   {
     id: 1, 
     headline: 'Eine kurze Info vorab',
-    todo: 'Die folgende Schritt für Schritt Anleitung ist ein Leitfaden anhand dessen Ihr die wichtigsten Schritte eines Importes durchlaufen könnt. Es empfiehlt sich den unten verlinkten Guide durchzuarbeiten um die Aufgaben bewältigen zu können. Natürlich könnt Ihr auch anderweitig zu jeder Aufgabe recherchieren aber das Buch ist eine Gute Grundlage. Sinn und Zweck dieser App ist es Euch eine Checkliste für den Import physischer Produkte an die Hand zu geben.'
+    todo: 'Die folgende Schritt für Schritt Anleitung ist ein Leitfaden anhand dessen Ihr die wichtigsten Schritte eines Importes durchlaufen könnt. Es empfiehlt sich den unten verlinkten Guide durchzuarbeiten um die Aufgaben bewältigen zu können. Natürlich könnt Ihr auch anderweitig zu jeder Aufgabe recherchieren aber das Buch ist eine Gute Grundlage. Sinn und Zweck dieser App ist es Euch eine Checkliste für den Import physischer Produkte an die Hand zu geben.',
+    link: 'Hol dir dein Buch'
   },
   {
     id: 2, 

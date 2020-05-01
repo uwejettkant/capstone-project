@@ -1,12 +1,17 @@
 import React from 'react';
 import Tasks from './tasks'
+import GlobalStyles from './globalStyles'
+import Header from './header'
+import Footer from './footer'
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <Tasks />
-    </div>
+    <>
+      <Header />
+      <GlobalStyles />
+        <Tasks />
+      <Footer />
+    </>
   );
 }
 
-export default App;
