@@ -5,7 +5,7 @@ export default function footer() {
   return <FooterStyled></FooterStyled>
 }
 
-const FooterStyled = styled.section`
+const FooterStyled = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
