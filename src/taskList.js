@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import services from './services'
+import userTasks from './taskList.json'
 
-export default function Tasks() {
+export default function TaskList() {
   return (
     <main>
       <CenteredWrapper>
-        {services.slice(0, 1).map((tasks) => (
+        {userTasks.slice(0, 1).map((tasks) => (
           <Frame key={tasks.id}>
             <h2>{tasks.headline}</h2>
             <p>{tasks.todo}</p>
