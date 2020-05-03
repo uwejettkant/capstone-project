@@ -8,11 +8,11 @@ export default {
 }
 
 export const simple = () => (
-  <GetNextTaskButton onClick={action('handleClick')}>default</GetNextTaskButton>
+  <GetNextTaskButton onClick={action('onClick')}>default</GetNextTaskButton>
 )
 
 export const isActive = () => (
-  <GetNextTaskButton onClick={action('handleClick')} isActive>
+  <GetNextTaskButton onClick={action('onClick')} isActive>
     Done
   </GetNextTaskButton>
 )

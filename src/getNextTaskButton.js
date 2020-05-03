@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-export default function GetNextTaskButton({ handleClick, children, isActive }) {
+export default function GetNextTaskButton({ onClick, children, isActive }) {
   return (
-    <ButtonStyled onClick={handleClick} isActive={isActive}>
+    <ButtonStyled isActive={isActive} onClick={onClick}>
       {children}
     </ButtonStyled>
   )

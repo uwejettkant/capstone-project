@@ -1,20 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components/macro'
 import userTask from './taskList.json'
 import GetNextTaskButton from './getNextTaskButton'
 
 export default function TaskList() {
+  const [isButtonSelected, setIsButtonSelected] = useState(false)
+
   return (
     <main>
       <CenteredWrapper>
-        {userTask.slice(0, 1).map((tasks) => (
-          <Frame key={tasks.id}>
-            <h2>{tasks.headline}</h2>
-            <p>{tasks.todo}</p>
+        {userTask.slice(0, 1).map((task) => (
+          <Frame key={task.id}>
+            <h2>{task.headline}</h2>
+            <p>{task.todo}</p>
             <a href="https://www.amazon.de/dp/B07V65RGDV" target="blank">
-              <button>{tasks.link}</button>
+              <button>{task.link}</button>
             </a>
-            <GetNextTaskButton>{'Starte Deinen Guide'}</GetNextTaskButton>
+            <GetNextTaskButton
+              isActive={isButtonSelected}
+              onClick={() => setIsButtonSelected(!isButtonSelected)}
+            >
+              {'Starte Deinen Guide'}
+            </GetNextTaskButton>
           </Frame>
         ))}
       </CenteredWrapper>
