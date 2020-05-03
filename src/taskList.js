@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 import userTask from './taskList.json'
-import ButtonStyled from './getNextTaskButton'
+import GetNextTaskButton from './getNextTaskButton'
 
 export default function TaskList() {
   return (
@@ -14,8 +14,7 @@ export default function TaskList() {
             <a href="https://www.amazon.de/dp/B07V65RGDV" target="blank">
               <button>{tasks.link}</button>
             </a>
-            <ButtonStyled>{'Start Deinen Guide'}</ButtonStyled>
-            {/* <button>Starte deinen Guide</button> */}
+            <GetNextTaskButton>{'Starte Deinen Guide'}</GetNextTaskButton>
           </Frame>
         ))}
       </CenteredWrapper>
