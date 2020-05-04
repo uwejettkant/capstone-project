@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import styled from 'styled-components/macro'
 import userTask from './TaskList.json'
 import GetNextTaskButton from './GetNextTaskButton'
+import LinkButtonStyled from './LinkButton'
 
-export default function TaskList() {
+export default function GuideIntroduction() {
   const [isButtonSelected, setIsButtonSelected] = useState(false)
 
   return (
@@ -14,7 +15,7 @@ export default function TaskList() {
             <h2>{task.headline}</h2>
             <p>{task.todo}</p>
             <a href="https://www.amazon.de/dp/B07V65RGDV" target="blank">
-              <button className="link-button">{task.link}</button>
+              <LinkButtonStyled>{task.link}</LinkButtonStyled>
             </a>
             <GetNextTaskButton
               isActive={isButtonSelected}

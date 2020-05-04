@@ -1,5 +1,5 @@
 import React from 'react'
-import TaskList from './TaskList'
+import GuideIntroduction from './GuideIntroduction'
 import GlobalStyles from './GlobalStyles'
 import Header from './Header'
 // import FirstTask from './firstTask'
@@ -10,7 +10,7 @@ export default function App() {
     <>
       <GlobalStyles />
       <Header />
-      <TaskList />
+      <GuideIntroduction />
       {/* <FirstTask /> */}
       <Footer />
     </>

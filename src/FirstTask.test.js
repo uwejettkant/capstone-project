@@ -3,16 +3,22 @@ import ReactDOM from 'react-dom'
 import { render } from '@testing-library/react'
 import FirstTask from './FirstTask'
 
-test('rendering FirstTast', () => {
+test('rendering headline Text', () => {
   const { getByText } = render(<FirstTask />)
   const linkElement = getByText(/Finde dein Produkt/i)
   expect(linkElement).toBeInTheDocument()
 })
 
-test('rendering Todo', () => {
+test('rendering component Text', () => {
   const container = document.createElement('section')
-  ReactDOM.render(<FirstTask>todo</FirstTask>, container)
+  ReactDOM.render(<FirstTask>text</FirstTask>, container)
   expect(container.textContent).toBe(
     'Finde dein ProduktUm dir den Einstieg zu erleichtern, klicke bitte auf den Button Alibaba. Du wirst auf die größte asiatische Handelsplattform Alibaba.com weitergeleitet.Alibaba'
   )
+})
+
+test('rendering button component text', () => {
+  const { getByText } = render(<FirstTask />)
+  const linkElement = getByText(/Zum Nächsten Schritt/i)
+  expect(linkElement).toBeInTheDocument()
 })
