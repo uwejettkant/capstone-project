@@ -8,11 +8,13 @@ export default {
 }
 
 export const simple = () => (
-  <GetNextTaskButton onClick={action('onClick')}>default</GetNextTaskButton>
+  <GetNextTaskButton defaultText="default" onClick={action('default')} />
 )
 
 export const isActive = () => (
-  <GetNextTaskButton onClick={action('onClick')} isActive>
-    Done
-  </GetNextTaskButton>
+  <GetNextTaskButton
+    activeText="I am active"
+    onClick={action('button was clicked')}
+    isActive
+  />
 )

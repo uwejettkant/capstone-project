@@ -13,6 +13,6 @@ test('rendering Todo', () => {
   const container = document.createElement('section')
   ReactDOM.render(<TaskList>todo</TaskList>, container)
   expect(container.textContent).toBe(
-    'Eine kurze Info vorabDie folgende Schritt für Schritt Anleitung ist ein Leitfaden anhand dessen Ihr die wichtigsten Schritte eines Importes durchlaufen könnt. Es empfiehlt sich den unten verlinkten Guide durchzuarbeiten um die Aufgaben bewältigen zu können. Natürlich könnt Ihr auch anderweitig zu jeder Aufgabe recherchieren aber das Buch ist eine Gute Grundlage. Sinn und Zweck dieser App ist es Euch eine Checkliste für den Import physischer Produkte an die Hand zu geben.Hol dir dein BuchStarte deinen Guide'
+    'Eine kurze Info vorabDie folgende Schritt für Schritt Anleitung ist ein Leitfaden, anhand dessen Ihr die wichtigsten Schritte eines Importes durchlaufen könnt. Es empfiehlt sich den unten verlinkten Guide durchzuarbeiten um die Aufgaben bewältigen zu können. Natürlich könnt Ihr auch anderweitig zu jeder Aufgabe recherchieren aber das Buch ist eine Gute Grundlage. Sinn und Zweck dieser App ist es Euch eine Checkliste für den Import physischer Produkte an die Hand zu geben.Hol dir dein BuchStarte Deinen Guide'
   )
 })
