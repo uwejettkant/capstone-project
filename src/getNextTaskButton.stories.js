@@ -1,6 +1,6 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import GetNextTaskButton from './getNextTaskButton'
+import GetNextTaskButton from './GetNextTaskButton'
 
 export default {
   component: 'GetNextTaskButton',

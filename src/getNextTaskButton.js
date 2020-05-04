@@ -1,10 +1,15 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-export default function GetNextTaskButton({ onClick, children, isActive }) {
+export default function GetNextTaskButton({
+  onClick,
+  activeText,
+  defaultText,
+  isActive,
+}) {
   return (
     <ButtonStyled isActive={isActive} onClick={onClick}>
-      {children}
+      {isActive ? activeText : defaultText}
     </ButtonStyled>
   )
 }

@@ -1,8 +1,9 @@
 import React from 'react'
-import TaskList from './taskList'
-import GlobalStyles from './globalStyles'
-import Header from './header'
-import Footer from './footer'
+import TaskList from './TaskList'
+import GlobalStyles from './GlobalStyles'
+import Header from './Header'
+// import FirstTask from './firstTask'
+import Footer from './Footer'
 
 export default function App() {
   return (
@@ -10,6 +11,7 @@ export default function App() {
       <GlobalStyles />
       <Header />
       <TaskList />
+      {/* <FirstTask /> */}
       <Footer />
     </>
   )

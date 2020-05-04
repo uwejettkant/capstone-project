@@ -3,25 +3,25 @@ import styled from 'styled-components/macro'
 import userTask from './TaskList.json'
 import GetNextTaskButton from './GetNextTaskButton'
 
-export default function TaskList() {
+export default function FirstTask() {
   const [isButtonSelected, setIsButtonSelected] = useState(false)
 
   return (
     <main>
       <CenteredWrapper>
-        {userTask.slice(0, 1).map((task) => (
+        {userTask.slice(1, 2).map((task) => (
           <Frame key={task.id}>
             <h2>{task.headline}</h2>
             <p>{task.todo}</p>
-            <a href="https://www.amazon.de/dp/B07V65RGDV" target="blank">
-              <button className="link-button">{task.link}</button>
+            <a href="https://www.alibaba.com/" target="blank">
+              <button>{task.link}</button>
             </a>
             <GetNextTaskButton
               isActive={isButtonSelected}
-              defaultText="Starte Deinen Guide"
-              activeText="Done"
               onClick={() => setIsButtonSelected(!isButtonSelected)}
-            />
+            >
+              {'Weiter zu Schritt 2'}
+            </GetNextTaskButton>
           </Frame>
         ))}
       </CenteredWrapper>
@@ -53,9 +53,9 @@ const Frame = styled.section`
   }
 
   p  {
-    padding: 2em;
+    padding: 3em;
     margin: 0;
-    font-size: 1rem;
+    font-size: 1.25rem;
   }
 
   a {
@@ -63,7 +63,7 @@ const Frame = styled.section`
     color: #4287f5;
   }
 
-  .link-button {
+  button {
     background: linear-gradient(45deg, #fff, #accbfa);
     padding: 1em;
     border: none;
@@ -74,7 +74,7 @@ const Frame = styled.section`
     margin: 0.5em;
   }
 
-  .link-button:active {
+  button:active {
     transform: scale(1.1);
   }
 `

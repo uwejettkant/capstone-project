@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import TaskList from './taskList'
+import TaskList from './TaskList'
 
 test('rendering Task List', () => {
   const { getByText } = render(<TaskList />)

@@ -1,5 +1,5 @@
 import React from 'react'
-import TaskList from './taskList'
+import TaskList from './TaskList'
 
 export default {
   component: TaskList,
