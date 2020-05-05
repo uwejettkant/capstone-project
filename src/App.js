@@ -1,15 +1,24 @@
 import React from 'react'
-import TaskList from './taskList'
-import GlobalStyles from './globalStyles'
-import Header from './header'
-import Footer from './footer'
+import GlobalStyles from './GlobalStyles'
+import { Route, Switch } from 'react-router-dom'
+import Header from './Header'
+import GuideIntroduction from './GuideIntroduction'
+import FirstTask from './FirstTask'
+import Footer from './Footer'
 
 export default function App() {
   return (
     <>
       <GlobalStyles />
       <Header />
-      <TaskList />
+      <Switch>
+        <Route exact path="/">
+          <GuideIntroduction />
+        </Route>
+        <Route path="/FirstTask">
+          <FirstTask />
+        </Route>
+      </Switch>
       <Footer />
     </>
   )

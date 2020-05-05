@@ -1,19 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components/macro'
-import userTask from './taskList.json'
+import userTask from './TaskList.json'
+import GetNextTaskButton from './GetNextTaskButton'
+import LinkButtonStyled from './LinkButton'
 
-export default function TaskList() {
+export default function GuideIntroduction() {
+  const [isButtonSelected, setIsButtonSelected] = useState(false)
+
   return (
     <main>
       <CenteredWrapper>
-        {userTask.slice(0, 1).map((tasks) => (
-          <Frame key={tasks.id}>
-            <h2>{tasks.headline}</h2>
-            <p>{tasks.todo}</p>
+        {userTask.slice(0, 1).map((task) => (
+          <Frame key={task.id}>
+            <h2>{task.headline}</h2>
+            <p>{task.todo}</p>
             <a href="https://www.amazon.de/dp/B07V65RGDV" target="blank">
-              <button>{tasks.link}</button>
+              <LinkButtonStyled>{task.link}</LinkButtonStyled>
             </a>
-            <button>Starte deinen Guide</button>
+            <Link to="/FirstTask">
+              <GetNextTaskButton
+                isActive={isButtonSelected}
+                defaultText="Starte Deinen Guide"
+                activeText="Done"
+                onClick={() => setIsButtonSelected(!isButtonSelected)}
+              />
+            </Link>
           </Frame>
         ))}
       </CenteredWrapper>
@@ -55,7 +67,7 @@ const Frame = styled.section`
     color: #4287f5;
   }
 
-  button {
+  .link-button {
     background: linear-gradient(45deg, #fff, #accbfa);
     padding: 1em;
     border: none;
@@ -66,7 +78,7 @@ const Frame = styled.section`
     margin: 0.5em;
   }
 
-  button:active {
+  .link-button:active {
     transform: scale(1.1);
   }
 `
