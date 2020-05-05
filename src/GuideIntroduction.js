@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import userTask from './TaskList.json'
 import GetNextTaskButton from './GetNextTaskButton'
-import LinkButtonStyled from './LinkButton'
+import LinkButton from './LinkButton'
 
 export default function GuideIntroduction() {
   const [isButtonSelected, setIsButtonSelected] = useState(false)
@@ -13,10 +13,14 @@ export default function GuideIntroduction() {
       <CenteredWrapper>
         {userTask.slice(0, 1).map((task) => (
           <Frame key={task.id}>
-            <h2>{task.headline}</h2>
-            <p>{task.todo}</p>
-            <a href="https://www.amazon.de/dp/B07V65RGDV" target="blank">
-              <LinkButtonStyled>{task.link}</LinkButtonStyled>
+            <h2 className="headline">{task.headline}</h2>
+            <p className="user-task-description">{task.todo}</p>
+            <a
+              className="link"
+              href="https://www.amazon.de/dp/B07V65RGDV"
+              target="blank"
+            >
+              <LinkButton>{task.link}</LinkButton>
             </a>
             <Link to="/FirstTask">
               <GetNextTaskButton
@@ -52,33 +56,18 @@ const Frame = styled.section`
   border-radius: 25px;
   margin: 1em;
 
-  h2 {
+  .headline {
     margin: 0;
   }
 
-  p  {
+  .user-task-description {
     padding: 2em;
     margin: 0;
     font-size: 1rem;
   }
 
-  a {
+  .link {
     text-decoration: none;
     color: #4287f5;
-  }
-
-  .link-button {
-    background: linear-gradient(45deg, #fff, #accbfa);
-    padding: 1em;
-    border: none;
-    border-radius: 10px;
-    font-weight: bold;
-    color: #4287f5;
-    width: 150px;
-    margin: 0.5em;
-  }
-
-  .link-button:active {
-    transform: scale(1.1);
   }
 `
