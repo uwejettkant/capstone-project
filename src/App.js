@@ -1,8 +1,9 @@
 import React from 'react'
-import GuideIntroduction from './GuideIntroduction'
 import GlobalStyles from './GlobalStyles'
+import { Route, Switch } from 'react-router-dom'
 import Header from './Header'
-// import FirstTask from './firstTask'
+import GuideIntroduction from './GuideIntroduction'
+import FirstTask from './FirstTask'
 import Footer from './Footer'
 
 export default function App() {
@@ -10,8 +11,14 @@ export default function App() {
     <>
       <GlobalStyles />
       <Header />
-      <GuideIntroduction />
-      {/* <FirstTask /> */}
+      <Switch>
+        <Route exact path="/">
+          <GuideIntroduction />
+        </Route>
+        <Route path="/FirstTask">
+          <FirstTask />
+        </Route>
+      </Switch>
       <Footer />
     </>
   )

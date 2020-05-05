@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import userTask from './TaskList.json'
 import GetNextTaskButton from './GetNextTaskButton'
@@ -17,12 +18,14 @@ export default function GuideIntroduction() {
             <a href="https://www.amazon.de/dp/B07V65RGDV" target="blank">
               <LinkButtonStyled>{task.link}</LinkButtonStyled>
             </a>
-            <GetNextTaskButton
-              isActive={isButtonSelected}
-              defaultText="Starte Deinen Guide"
-              activeText="Done"
-              onClick={() => setIsButtonSelected(!isButtonSelected)}
-            />
+            <Link to="/FirstTask">
+              <GetNextTaskButton
+                isActive={isButtonSelected}
+                defaultText="Starte Deinen Guide"
+                activeText="Done"
+                onClick={() => setIsButtonSelected(!isButtonSelected)}
+              />
+            </Link>
           </Frame>
         ))}
       </CenteredWrapper>
