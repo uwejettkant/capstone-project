@@ -1,35 +1,30 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import userTask from './TaskList.json'
 import GetNextTaskButton from './GetNextTaskButton'
-import LinkButton from './LinkButton'
 
-export default function GuideIntroduction() {
+export default function TaskList() {
   const [isButtonSelected, setIsButtonSelected] = useState(false)
 
   return (
     <main>
       <CenteredWrapper>
-        {userTask.slice(0, 1).map((task) => (
+        {userTask.map((task) => (
           <Frame key={task.id}>
             <h2 className="headline">{task.headline}</h2>
             <p className="user-task-description">{task.todo}</p>
-            <a
-              className="link"
-              href="https://www.amazon.de/dp/B07V65RGDV"
-              target="blank"
-            >
-              <LinkButton>{task.link}</LinkButton>
+            <a className="link" href={task.url} target="blank">
+              {task.linkText}
             </a>
-            <Link to="/FirstTask">
-              <GetNextTaskButton
-                isActive={isButtonSelected}
-                defaultText="Starte Deinen Guide"
-                activeText="Done"
-                onClick={() => setIsButtonSelected(!isButtonSelected)}
-              />
-            </Link>
+            <a className="link" href={task.url1} target="blank">
+              {task.linkText1}
+            </a>
+            <GetNextTaskButton
+              isActive={isButtonSelected}
+              defaultText="Zum Nächsten Schritt"
+              activeText="Done"
+              onClick={() => setIsButtonSelected(!isButtonSelected)}
+            />
           </Frame>
         ))}
       </CenteredWrapper>
@@ -37,22 +32,22 @@ export default function GuideIntroduction() {
   )
 }
 
-const CenteredWrapper = styled.div`
+const CenteredWrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 4em;
+  margin-top: 1em;
 `
 const Frame = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+  height: 575px;
+  width: 350px;
   color: #fff;
   font-size: 1.125rem;
   background: linear-gradient(45deg, #8eb8fa, #4287f5);
-  height: 450px;
-  width: 350px;
   border-radius: 25px;
   margin: 1em;
 
@@ -67,7 +62,20 @@ const Frame = styled.section`
   }
 
   .link {
-    text-decoration: none;
+    background: linear-gradient(45deg, #fff, #accbfa);
+    padding: 1em;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
     color: #4287f5;
+    width: 150px;
+    margin: 0.5em;
+    text-decoration: none;
+    font-size: 0.74rem;
+    text-align: center;
+
+    &:active {
+      transform: scale(1.1);
+    }
   }
 `
