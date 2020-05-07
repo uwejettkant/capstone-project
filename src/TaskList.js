@@ -17,11 +17,16 @@ import Data from './images/data.jpg'
 import Pallets from './images/pallets.jpg'
 import Tax from './images/tax.jpg'
 import Deal from './images/deal.jpg'
+// import PropTypes from 'prop-types'
 
 export default function TaskList() {
   const [isButtonSelected, setIsButtonSelected] = useState(false)
 
   const match = useRouteMatch()
+
+  // TaskList.propTypes = {
+  //   isEmptyString: PropTypes.string.isRequired,
+  // }
 
   return (
     <main>
@@ -46,19 +51,25 @@ export default function TaskList() {
                 {task.id === 15 && <img src={Deal} alt="shaking hands" />}
                 <h2 className="headline">{task.headline}</h2>
                 <p className="user-task-description">{task.todo}</p>
-                <a className="link" href={task.url} target="blank">
-                  {task.linkText}
-                </a>
-                <a className="link" href={task.url1} target="blank">
-                  {task.linkText1}
-                </a>
+                {task.linkText && (
+                  <a className="link" href={task.url} target="blank">
+                    {task.linkText}
+                  </a>
+                )}
+                {task.linkText1 && (
+                  <a className="link" href={task.url1} target="blank">
+                    {task.linkText1}
+                  </a>
+                )}
                 <Link to={`/task/${userTask[index + 1].id}`}>
-                  <GetNextTaskButton
-                    isActive={isButtonSelected}
-                    defaultText="Zum Nächsten Schritt"
-                    activeText="Done"
-                    onClick={() => setIsButtonSelected(!isButtonSelected)}
-                  />
+                  {task.id === 14 || (
+                    <GetNextTaskButton
+                      isActive={isButtonSelected}
+                      defaultText="Zum Nächsten Schritt"
+                      activeText="Done"
+                      onClick={() => setIsButtonSelected(!isButtonSelected)}
+                    />
+                  )}
                 </Link>
               </Frame>
             )

@@ -81,7 +81,9 @@
   {
     "id": 14,
     "headline": "Prüfe den Zollbescheid",
-    "todo": "Auch wenn er Spediteur die Zollanmeldung für dich vornimmt bist du für sie Richtigkeit der Angaben verantwortlich. Prüfe daher sorgfältig den Steuerbescheid."
+    "todo": "Auch wenn er Spediteur die Zollanmeldung für dich vornimmt bist du für sie Richtigkeit der Angaben verantwortlich. Prüfe daher sorgfältig den Steuerbescheid.",
+    "linkText": "",
+    "url": ""
   },
   {
     "id": 15,
