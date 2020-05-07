@@ -6,6 +6,4 @@ export default {
   title: 'TaskList',
 }
 
-export const introduction = () => {
-  return <TaskList />
-}
+export const listAll = () => <TaskList />
