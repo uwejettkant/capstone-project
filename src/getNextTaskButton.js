@@ -19,13 +19,13 @@ const ButtonStyled = styled.button`
     props.isActive
       ? 'linear-gradient(45deg, #fff, #f3f595)'
       : 'linear-gradient(45deg, #fff, #accbfa)'};
-  padding: 1em;
+  padding: 0.5em;
   border: none;
   border-radius: 10px;
   font-weight: bold;
   color: #4287f5;
-  width: 150px;
-  margin: 0.5em;
+  width: 175px;
+  margin-bottom: 1.25em;
 
   &:active {
     transform: scale(1.1);

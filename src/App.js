@@ -1,10 +1,10 @@
 import React from 'react'
 import GlobalStyles from './GlobalStyles'
-import { Route, Switch } from 'react-router-dom'
 import Header from './Header'
-import GuideIntroduction from './GuideIntroduction'
-import FirstTask from './FirstTask'
+import Home from './Home'
+import TaskList from './TaskList'
 import Footer from './Footer'
+import { Switch, Route } from 'react-router-dom'
 
 export default function App() {
   return (
@@ -13,10 +13,10 @@ export default function App() {
       <Header />
       <Switch>
         <Route exact path="/">
-          <GuideIntroduction />
+          <Home />
         </Route>
-        <Route path="/FirstTask">
-          <FirstTask />
+        <Route path="/task/:taskId">
+          <TaskList />
         </Route>
       </Switch>
       <Footer />
