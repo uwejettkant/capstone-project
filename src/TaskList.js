@@ -54,9 +54,9 @@ export default function TaskList() {
                     {task.linkText}
                   </a>
                 )}
-                {task.linkText1 && (
-                  <a className="link" href={task.url1} target="blank">
-                    {task.linkText1}
+                {task.linkTexOne && (
+                  <a className="link" href={task.urlOne} target="blank">
+                    {task.linkTextOne}
                   </a>
                 )}
                 <Link to={`/task/${userTask[index + 1].id}`}>

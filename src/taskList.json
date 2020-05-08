@@ -19,8 +19,8 @@
     "todo": "Kontaktiere das Zollinfocenter oder Recherchiere auf EZT-Online-Einfuhr. Wichtig, die Zolltarifnummer muss 11-stellig sein!",
     "linkText": "Zolltarifnummer",
     "url": "http://auskunft.ezt-online.de/ezto/Modus.do#ziel",
-    "linkText1": "Zollinfocenter",
-    "url1": "https://www.zoll.de/DE/Kontakt/Auskuenfte/Allgemeine-Zoll-Fragen-von-Unternehmen/allgemeine-zoll-fragen-von-unternehmen_node.html"
+    "linkTextOne": "Zollinfocenter",
+    "urlOne": "https://www.zoll.de/DE/Kontakt/Auskuenfte/Allgemeine-Zoll-Fragen-von-Unternehmen/allgemeine-zoll-fragen-von-unternehmen_node.html"
   },
   {
     "id": 4,
@@ -28,8 +28,8 @@
     "todo": "Kontaktiere erneut das Zollinfocenter ob es ggf. Einfuhrbeschränkungen für dein Produkt gibt.",
     "linkText": "Zolltarifnummer",
     "url": "http://auskunft.ezt-online.de/ezto/Modus.do#ziel",
-    "linkText1": "Zollinfocenter",
-    "url1": "https://www.zoll.de/DE/Kontakt/Auskuenfte/Allgemeine-Zoll-Fragen-von-Unternehmen/allgemeine-zoll-fragen-von-unternehmen_node.html"
+    "linkTextOne": "Zollinfocenter",
+    "urlOne": "https://www.zoll.de/DE/Kontakt/Auskuenfte/Allgemeine-Zoll-Fragen-von-Unternehmen/allgemeine-zoll-fragen-von-unternehmen_node.html"
   },
   {
     "id": 5,

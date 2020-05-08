@@ -4,11 +4,14 @@ import { NavLink } from 'react-router-dom'
 
 export default function Home() {
   return (
-    <NavLinkStyled to="/task/1">
-      <h4 className="nav-text">
-        Deine Schritt für Schritt Anleitung für den Import physischer Produkte
-      </h4>
-    </NavLinkStyled>
+    <LinkWrapper>
+      <NavLinkStyled to="/task/1">
+        <h4 className="nav-text">
+          Hier geht`s zu Deiner Schritt für Schritt Anleitung für den Import
+          physischer Produkte
+        </h4>
+      </NavLinkStyled>
+    </LinkWrapper>
   )
 }
 
@@ -22,7 +25,15 @@ const NavLinkStyled = styled(NavLink)`
   padding: 1em;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   text-align: center;
+  justify-content: center;
   text-decoration: none;
+  color: #12263d;
+`
+
+const LinkWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `
