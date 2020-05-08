@@ -81,9 +81,7 @@
   {
     "id": 14,
     "headline": "Prüfe den Zollbescheid",
-    "todo": "Auch wenn er Spediteur die Zollanmeldung für dich vornimmt bist du für sie Richtigkeit der Angaben verantwortlich. Prüfe daher sorgfältig den Steuerbescheid.",
-    "linkText": "",
-    "url": ""
+    "todo": "Auch wenn er Spediteur die Zollanmeldung für dich vornimmt bist du für sie Richtigkeit der Angaben verantwortlich. Prüfe daher sorgfältig den Steuerbescheid."
   },
   {
     "id": 15,
@@ -94,5 +92,10 @@
     "id": 16,
     "headline": "Herzlichen Glückwunsch zu deinem ersten Import",
     "todo": "Feier ordentlich und hab Spaß beim verkaufen deiner Produkte!"
+  },
+  {
+    "id": 17,
+    "headline": "",
+    "todo": ""
   }
 ]
