@@ -4,18 +4,14 @@
     "headline": "Eine kurze Info vorab",
     "todo": "Die folgende Schritt für Schritt Anleitung ist ein Leitfaden, anhand dessen Ihr die wichtigsten Schritte eines Importes durchlaufen könnt. Es empfiehlt sich den unten verlinkten Guide durchzuarbeiten um die Aufgaben bewältigen zu können. Natürlich könnt Ihr auch anderweitig zu jeder Aufgabe recherchieren aber das Buch ist eine Gute Grundlage. Sinn und Zweck dieser App ist es Euch eine Checkliste für den Import physischer Produkte an die Hand zu geben.",
     "linkText": "Hol Dir Dein Buch",
-    "url": "https://www.amazon.de/dp/B07V65RGDV",
-    "percentage": "0%",
-    "color": "transparent"
+    "url": "https://www.amazon.de/dp/B07V65RGDV"
   },
   {
     "id": 2,
     "headline": "Finde dein Produkt",
     "todo": "Um dir den Einstieg zu erleichtern, klicke bitte auf den Button Alibaba. Du wirst auf die größte asiatische Handelsplattform Alibaba.com weitergeleitet.",
     "linkText": "Alibaba",
-    "url": "https://www.alibaba.com/",
-    "percentage": "6.25%",
-    "color": "hotpink"
+    "url": "https://www.alibaba.com/"
   },
   {
     "id": 3,
@@ -24,9 +20,7 @@
     "linkText": "Zolltarifnummer",
     "url": "http://auskunft.ezt-online.de/ezto/Modus.do#ziel",
     "linkTextOne": "Zollinfocenter",
-    "urlOne": "https://www.zoll.de/DE/Kontakt/Auskuenfte/Allgemeine-Zoll-Fragen-von-Unternehmen/allgemeine-zoll-fragen-von-unternehmen_node.html",
-    "percentage": "12.5%",
-    "color": "black"
+    "urlOne": "https://www.zoll.de/DE/Kontakt/Auskuenfte/Allgemeine-Zoll-Fragen-von-Unternehmen/allgemeine-zoll-fragen-von-unternehmen_node.html"
   },
   {
     "id": 4,
@@ -35,9 +29,7 @@
     "linkText": "Zolltarifnummer",
     "url": "http://auskunft.ezt-online.de/ezto/Modus.do#ziel",
     "linkTextOne": "Zollinfocenter",
-    "urlOne": "https://www.zoll.de/DE/Kontakt/Auskuenfte/Allgemeine-Zoll-Fragen-von-Unternehmen/allgemeine-zoll-fragen-von-unternehmen_node.html",
-    "percentage": "18.75%",
-    "color": "green"
+    "urlOne": "https://www.zoll.de/DE/Kontakt/Auskuenfte/Allgemeine-Zoll-Fragen-von-Unternehmen/allgemeine-zoll-fragen-von-unternehmen_node.html"
   },
   {
     "id": 5,
@@ -62,7 +54,7 @@
   {
     "id": 9,
     "headline": "Beantrage eine EORI Nr.",
-    "todo": "Mit dieser Nummer ist dein Unternehmen beim Zollamt registriert. Sie ist zwingend notwendig um Waren zu omportieren!",
+    "todo": "Mit dieser Nummer ist dein Unternehmen beim Zollamt registriert. Sie ist zwingend notwendig um Waren zu importieren!",
     "linkText": "Antrag EORI Nr.",
     "url": "https://www.zoll.de/DE/Fachthemen/Zoelle/EORI-Nummer/Beantragung-einer-EORI-Nummer/beantragung-einer-eori-nummer_node.html"
   },
