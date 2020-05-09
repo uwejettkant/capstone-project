@@ -26,6 +26,7 @@ const ButtonStyled = styled.button`
   color: #4287f5;
   width: 175px;
   margin-bottom: 1.25em;
+  margin: 0.5em;
 
   &:active {
     transform: scale(1.1);

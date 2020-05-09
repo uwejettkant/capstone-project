@@ -54,7 +54,7 @@
   {
     "id": 9,
     "headline": "Beantrage eine EORI Nr.",
-    "todo": "Mit dieser Nummer ist dein Unternehmen beim Zollamt registriert. Sie ist zwingend notwendig um Waren zu omportieren!",
+    "todo": "Mit dieser Nummer ist dein Unternehmen beim Zollamt registriert. Sie ist zwingend notwendig um Waren zu importieren!",
     "linkText": "Antrag EORI Nr.",
     "url": "https://www.zoll.de/DE/Fachthemen/Zoelle/EORI-Nummer/Beantragung-einer-EORI-Nummer/beantragung-einer-eori-nummer_node.html"
   },

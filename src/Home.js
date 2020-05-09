@@ -6,10 +6,12 @@ export default function Home() {
   return (
     <LinkWrapper>
       <NavLinkStyled to="/task/1">
-        <h4 className="nav-text">
-          Hier geht`s zu Deiner Schritt für Schritt Anleitung für den Import
-          physischer Produkte
+        <h4>
+          Schritt für Schritt Anleitung für den Import physischer Produkte
         </h4>
+      </NavLinkStyled>
+      <NavLinkStyled to="/individual-notes">
+        <h4>Meine Notizen</h4>
       </NavLinkStyled>
     </LinkWrapper>
   )
@@ -36,4 +38,6 @@ const LinkWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  justify-content: space-evenly;
+  height: 500px;
 `

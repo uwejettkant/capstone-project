@@ -3,12 +3,13 @@ import styled from 'styled-components/macro'
 import userTask from './TaskList.json'
 import GetNextTaskButton from './GetNextTaskButton'
 import { Link, useRouteMatch } from 'react-router-dom'
+import Info from './images/info.jpg'
 import Product from './images/product.jpg'
 import Numbers from './images/numbers.jpg'
 import Restriction from './images/restriction.jpg'
 import Sample from './images/sample.jpg'
-import Offer from './images/offer.jpg'
-import Calculator from './images/calculator.jpg'
+import Dollar from './images/dollar.jpg'
+import Calculation from './images/calculation.jpg'
 import Contract from './images/contract.jpg'
 import Eori from './images/eori.jpg'
 import Container from './images/container.jpg'
@@ -20,7 +21,7 @@ import Deal from './images/deal.jpg'
 import Congratulations from './images/congratulations.jpg'
 
 export default function TaskList() {
-  // const [isButtonSelected, setIsButtonSelected] = useState(false)
+  const [isButtonSelected, setIsButtonSelected] = useState(false)
   const match = useRouteMatch()
 
   return (
@@ -30,12 +31,13 @@ export default function TaskList() {
           (task, index) =>
             task.id === parseInt(match.params.taskId) && (
               <Frame key={task.id}>
-                {task.id === 2 && <img src={Product} alt="shopimage" />}
+                {task.id === 1 && <img src={Info} alt="info on wall" />}
+                {task.id === 2 && <img src={Product} alt="shop" />}
                 {task.id === 3 && <img src={Numbers} alt="pen and numbers" />}
                 {task.id === 4 && <img src={Restriction} alt="stop sign" />}
                 {task.id === 5 && <img src={Sample} alt="sample" />}
-                {task.id === 6 && <img src={Offer} alt="signing paper" />}
-                {task.id === 7 && <img src={Calculator} alt="calculator" />}
+                {task.id === 6 && <img src={Dollar} alt="one dollar" />}
+                {task.id === 7 && <img src={Calculation} alt="calculator" />}
                 {task.id === 8 && <img src={Contract} alt="contract" />}
                 {task.id === 9 && <img src={Eori} alt="documents on table" />}
                 {task.id === 10 && <img src={Container} alt="containers" />}
@@ -49,26 +51,28 @@ export default function TaskList() {
                 )}
                 <h2 className="headline">{task.headline}</h2>
                 <p className="user-task-description">{task.todo}</p>
-                {task.linkText && (
-                  <a className="link" href={task.url} target="blank">
-                    {task.linkText}
-                  </a>
-                )}
-                {task.linkTexOne && (
-                  <a className="link" href={task.urlOne} target="blank">
-                    {task.linkTextOne}
-                  </a>
-                )}
-                <Link to={`/task/${userTask[index + 1].id}`}>
-                  {task.id === 16 || (
-                    <GetNextTaskButton
-                      // isActive={isButtonSelected}
-                      defaultText="Zum Nächsten Schritt"
-                      activeText="Done"
-                      // onClick={() => setIsButtonSelected(!isButtonSelected)}
-                    />
+                <div className="button-wrapper">
+                  {task.linkText && (
+                    <a className="link" href={task.url} target="blank">
+                      {task.linkText}
+                    </a>
                   )}
-                </Link>
+                  {task.linkTextOne && (
+                    <a className="link" href={task.urlOne} target="blank">
+                      {task.linkTextOne}
+                    </a>
+                  )}
+                  <Link to={`/task/${userTask[index + 1].id}`}>
+                    {task.id === 16 || (
+                      <GetNextTaskButton
+                        isActive={isButtonSelected}
+                        defaultText="Zum Nächsten Schritt"
+                        activeText="Done"
+                        onClick={() => setIsButtonSelected(!isButtonSelected)}
+                      />
+                    )}
+                  </Link>
+                </div>
               </Frame>
             )
         )}
@@ -92,7 +96,7 @@ const Frame = styled.section`
   width: 350px;
   color: #fff;
   font-size: 1.125rem;
-  background: linear-gradient(45deg, #8eb8fa, #4287f5);
+  background: transparent;
   border-radius: 25px;
   margin: 1em;
 
@@ -123,11 +127,18 @@ const Frame = styled.section`
     width: 175px;
     margin: 0.5em;
     text-decoration: none;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     text-align: center;
 
     &:active {
       transform: scale(1.1);
     }
+  }
+
+  .button-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
   }
 `
