@@ -20,7 +20,7 @@ import Deal from './images/deal.jpg'
 import Congratulations from './images/congratulations.jpg'
 
 export default function TaskList() {
-  // const [isButtonSelected, setIsButtonSelected] = useState(false)
+  const [isButtonSelected, setIsButtonSelected] = useState(false)
   const match = useRouteMatch()
 
   return (
@@ -62,10 +62,10 @@ export default function TaskList() {
                 <Link to={`/task/${userTask[index + 1].id}`}>
                   {task.id === 16 || (
                     <GetNextTaskButton
-                      // isActive={isButtonSelected}
+                      isActive={isButtonSelected}
                       defaultText="Zum Nächsten Schritt"
                       activeText="Done"
-                      // onClick={() => setIsButtonSelected(!isButtonSelected)}
+                      onClick={() => setIsButtonSelected(!isButtonSelected)}
                     />
                   )}
                 </Link>
