@@ -11,9 +11,9 @@ export default function NoteDescription({
     <>
       <MyNotes
         style={{
-          textDecoration: notice.isCompleted ? 'line-through' : '',
           textDecorationThickness: notice.isCompleted ? '0.1em' : '',
         }}
+        notice={notice}
       >
         {notice.text}
         <ButtonWrapper>
@@ -30,6 +30,8 @@ export default function NoteDescription({
 }
 
 const MyNotes = styled.section`
+  text-decoration: ${(props) =>
+    props.notice.isCompleted ? 'line-through' : ''};
   color: #fff;
   font-size: 1.15rem;
   font-weight: bold;
