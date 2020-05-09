@@ -19,7 +19,7 @@ export default function App() {
         <Route path="/task/:taskId">
           <TaskList />
         </Route>
-        <Route path="/todo">
+        <Route path="/individual-notes">
           <IndividualNotes />
         </Route>
       </Switch>
