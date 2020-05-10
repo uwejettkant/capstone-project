@@ -4,16 +4,18 @@ import { NavLink } from 'react-router-dom'
 
 export default function Home() {
   return (
-    <LinkWrapper>
-      <NavLinkStyled to="/task/1">
-        <h4>
-          Schritt für Schritt Anleitung für den Import physischer Produkte
-        </h4>
-      </NavLinkStyled>
-      <NavLinkStyled to="/individual-notes">
-        <h4>Meine Notizen</h4>
-      </NavLinkStyled>
-    </LinkWrapper>
+    <>
+      <LinkWrapper>
+        <NavLinkStyled to="/task/1">
+          <h4>
+            Schritt für Schritt Anleitung für den Import physischer Produkte
+          </h4>
+        </NavLinkStyled>
+        <NavLinkStyled to="/individual-notes">
+          <h4>Meine Notizen</h4>
+        </NavLinkStyled>
+      </LinkWrapper>
+    </>
   )
 }
 

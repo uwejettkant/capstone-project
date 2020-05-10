@@ -19,9 +19,15 @@ import Pallets from './images/pallets.jpg'
 import Tax from './images/tax.jpg'
 import Deal from './images/deal.jpg'
 import Congratulations from './images/congratulations.jpg'
+import ProgressBar from './ProgressBar'
+import PropTypes from 'prop-types'
+
+ProgressBar.propTypes = {
+  percentage: PropTypes.number,
+}
 
 export default function TaskList() {
-  const [isButtonSelected, setIsButtonSelected] = useState(false)
+  const [progress, setProgress] = useState({ percentage: 0 })
   const match = useRouteMatch()
 
   return (
@@ -65,13 +71,16 @@ export default function TaskList() {
                   <Link to={`/task/${userTask[index + 1].id}`}>
                     {task.id === 16 || (
                       <GetNextTaskButton
-                        isActive={isButtonSelected}
                         defaultText="Zum Nächsten Schritt"
-                        activeText="Done"
-                        onClick={() => setIsButtonSelected(!isButtonSelected)}
+                        onClick={() =>
+                          setProgress({
+                            percentage: progress.percentage + 6.66,
+                          })
+                        }
                       />
                     )}
                   </Link>
+                  <ProgressBar percentage={progress.percentage} />
                 </div>
               </Frame>
             )
@@ -80,7 +89,6 @@ export default function TaskList() {
     </main>
   )
 }
-
 const CenteredWrapper = styled.section`
   display: flex;
   flex-direction: column;
