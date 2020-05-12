@@ -14,9 +14,6 @@ export default function Home() {
         <NavLinkStyled to="/individual-notes">
           <h4>Meine Notizen</h4>
         </NavLinkStyled>
-        <NavLinkStyled to="/create-Shipments">
-          <h4>Erfasse Deine Sendung</h4>
-        </NavLinkStyled>
       </LinkWrapper>
     </>
   )

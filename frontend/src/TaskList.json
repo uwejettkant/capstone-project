@@ -24,8 +24,8 @@
   },
   {
     "id": 4,
-    "headline": "Prüfe ob es Einfuhrbeschränkungen gibt",
-    "todo": "Kontaktiere erneut das Zollinfocenter ob es ggf. Einfuhrbeschränkungen für dein Produkt gibt.",
+    "headline": "Prüfe, ob es Einfuhrbeschränkungen gibt",
+    "todo": "Kontaktiere erneut das Zollinfocenter, ob es ggf. Einfuhrbeschränkungen für dein Produkt gibt.",
     "linkText": "Zolltarifnummer",
     "url": "http://auskunft.ezt-online.de/ezto/Modus.do#ziel",
     "linkTextOne": "Zollinfocenter",
@@ -39,49 +39,49 @@
   {
     "id": 6,
     "headline": "Hole Transportangebote ein",
-    "todo": "Kontaktiere unbedingt einen Spediteur in Deutschland. Klare Empfehlung für Lieferbedingung ist der Incoterm FOB! Die Lieferbedingung ist Grundlage des Angebotes und Entscheidend für den Kaufvertrag, da sie Rechte und Pflichten für dich als Käufer sowie den Verkäufer festlegt!"
+    "todo": "Kontaktiere unbedingt einen Spediteur in Deutschland. Klare Empfehlung für Lieferbedingung ist der Incoterm FOB! Die Lieferbedingung ist Grundlage des Angebotes und entscheidend für den Kaufvertrag, da sie Rechte und Pflichten für dich als Käufer sowie den Verkäufer festlegt!"
   },
   {
     "id": 7,
     "headline": "Kalkuliere deine Kosten",
-    "todo": "Die Basis für deine Kalkulation sind das Abgebot des Spediteurs deiner Wahl, der Kaufpreis der Ware, Transportkosten, Zoll und die Einfuhrumsatzsteuer!"
+    "todo": "Die Basis für deine Kalkulation sind das Angebot des Spediteurs deiner Wahl, der Kaufpreis der Ware, Transportkosten, Zoll und die Einfuhrumsatzsteuer!"
   },
   {
     "id": 8,
     "headline": "Schließe den Kaufvertrag ab",
-    "todo": "Damit startet dein Abenteuer Import. In der Regel wirst du bei Erstgeschäften Vorkasse leisten müssen bevor dein Lieferant die Ware produziert. Ausnahmen bestätigen natürlich die Regel und alles ist Verhandlungssache. Auf modernen Handelsplattformen ist Prinzip ähnlich wie in einem normaen Onlineshop."
+    "todo": "Damit startet dein Abenteuer Import. In der Regel wirst du bei Erstgeschäften Vorkasse leisten müssen bevor dein Lieferant die Ware produziert. Ausnahmen bestätigen natürlich die Regel und alles ist Verhandlungssache. Auf modernen Handelsplattformen ist Prinzip ähnlich wie in einem normalen Onlineshop."
   },
   {
     "id": 9,
     "headline": "Beantrage eine EORI Nr.",
-    "todo": "Mit dieser Nummer ist dein Unternehmen beim Zollamt registriert. Sie ist zwingend notwendig um Waren zu importieren!",
+    "todo": "Mit dieser Nummer ist dein Unternehmen beim Zollamt registriert. Sie ist zwingend notwendig, um Waren zu importieren!",
     "linkText": "Antrag EORI Nr.",
     "url": "https://www.zoll.de/DE/Fachthemen/Zoelle/EORI-Nummer/Beantragung-einer-EORI-Nummer/beantragung-einer-eori-nummer_node.html"
   },
   {
     "id": 10,
     "headline": "Beauftrage den Spediteur",
-    "todo": "Auf Basis der zuvor einfeforderten Angebote und deiner Kalkulation musst du dich nun für ein Transportunternehmen entscheiden."
+    "todo": "Auf Basis der zuvor eingeforderten Angebote und deiner Kalkulation musst du dich nun für ein Transportunternehmen entscheiden."
   },
   {
     "id": 11,
     "headline": "Zahle den Kaufpreis an den Lieferanten",
-    "todo": "Nach Zahlungseingang beim Lieferanten erhälst du 3/3 original BL. Die BL`s sind dein Eigentumsnachweis über die gekaufte Ware. Stelle sicher das Originale direkt zu dir geschickt werden. Du wirst sie dringend benötigen!"
+    "todo": "Nach Zahlungseingang beim Lieferanten erhältst du 3/3 original BL. Die BL's sind dein Eigentumsnachweis über die gekaufte Ware. Stelle sicher das Originale direkt zu dir geschickt werden. Du wirst sie dringend benötigen!"
   },
   {
     "id": 12,
-    "headline": "Übermittle alle notendigen Daten an den Spediteur",
-    "todo": "Diese Informationen soltest du zur Verfügung stellen: 1/3 Original BL (indossiert), deine Rechnungs- und Lieferanschrift, UStID (wenn vorhanden), EORI Nr, Zolltarifnummer der Ware (11-stellig), genaue dt. Warenbeschreibung mit Materialangabe, Handelsrechnung u. Packliste und besonderheiten die bei der Anlieferung zu beachten sind (z.B. eine Hebebühne)."
+    "headline": "Übermittle alle notwendigen Daten an den Spediteur",
+    "todo": "Diese Informationen solltest du zur Verfügung stellen: 1/3 Original BL (indossiert), deine Rechnungs- und Lieferanschrift, USt-IdNr. (wenn vorhanden), EORI Nr, Zolltarifnummer der Ware (11-stellig), genaue dt. Warenbeschreibung mit Materialangabe, Handelsrechnung u. Packliste und Besonderheiten die bei der Anlieferung zu beachten sind (z.B. eine Hebebühne)."
   },
   {
     "id": 13,
     "headline": "Nimm deine Ware in Empfang",
-    "todo": "Nach erfolgter Zollabfertigung teilt dir der Spediteur den Anliefertermin mit. Stelle sicher das genügend Entladepersonal vor Ort ist um die Ware in Empfang zu nehmen."
+    "todo": "Nach erfolgter Zollabfertigung teilt dir der Spediteur den Anliefertermin mit. Stelle sicher das genügend Entladepersonal vor Ort ist, um die Ware in Empfang zu nehmen."
   },
   {
     "id": 14,
     "headline": "Prüfe den Zollbescheid",
-    "todo": "Auch wenn er Spediteur die Zollanmeldung für dich vornimmt bist du für sie Richtigkeit der Angaben verantwortlich. Prüfe daher sorgfältig den Steuerbescheid."
+    "todo": "Auch, wenn du den Spediteur mit der Zollanmeldung beauftragst, bist du für sie Richtigkeit der Angaben verantwortlich. Prüfe daher sorgfältig den Steuerbescheid."
   },
   {
     "id": 15,
@@ -91,7 +91,7 @@
   {
     "id": 16,
     "headline": "Herzlichen Glückwunsch zu deinem ersten Import",
-    "todo": "Feier ordentlich und hab Spaß beim verkaufen deiner Produkte!"
+    "todo": "Feier ordentlich und hab Spaß beim Verkaufen deiner Produkte!"
   },
   {
     "id": 17,
