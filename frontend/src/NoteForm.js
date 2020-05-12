@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, } from 'react'
 import styled from 'styled-components/macro'
 
-export default function NoteForm({ addNotice }) {
+export default function NoteForm({ addNotice, defaultText }) {
   const [value, setValue] = useState('')
 
   function handleSubmit(e) {
@@ -12,10 +12,10 @@ export default function NoteForm({ addNotice }) {
 
   return (
     <FormStyled onSubmit={handleSubmit}>
-      <LabelStyled htmlFor="city">Deine Notiz</LabelStyled>
+      <LabelStyled htmlFor="name">{defaultText}</LabelStyled>
       <InputStyled
         type="text"
-        name="Deine Notiz"
+        name={defaultText}
         placeholder="max. 40 Zeichen"
         value={value}
         maxLength="40"

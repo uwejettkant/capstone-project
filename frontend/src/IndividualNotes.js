@@ -10,7 +10,7 @@ export default function IndividualNotes() {
       isCompleted: false,
     },
     {
-      text: 'Muster senden lassen',
+      text: 'Lieferbedingung festlegen',
       isCompleted: false,
     },
     {
@@ -48,7 +48,7 @@ export default function IndividualNotes() {
             removeNotice={removeNotice}
           />
         ))}
-        <NoteForm addNotice={addNotice} />
+        <NoteForm addNotice={addNotice} defaultText='Deine Notiz'/>
       </NoteListWrapper>
     </main>
   )
