@@ -22,16 +22,11 @@ const FooterStyled = styled.footer`
     color: #fff;
     background: transparent;
     font-size: 2.5rem;
-    margin-bottom: .15em;
+    /* margin-bottom: .15em; */
   }
 `
 
 const NavLinkStyled = styled(NavLink)`
   /* padding: 10px; */
-  &.selected {
-    background: #dde8eb;
-  }
-  img {
-    height: 25px;
-  }
+  background: transparent;
 `

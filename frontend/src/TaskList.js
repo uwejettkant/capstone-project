@@ -101,16 +101,15 @@ const Frame = styled.section`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 500px;
+  height: 550px;
   width: 350px;
   color: #fff;
   font-size: 1.125rem;
   background: transparent;
   border-radius: 25px;
-  margin: 1em;
 
   img {
-    height: 35%;
+    height: 28%;
     width: 100%;
     object-fit: cover;
   }
