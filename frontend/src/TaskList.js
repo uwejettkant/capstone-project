@@ -29,6 +29,7 @@ ProgressBar.propTypes = {
 export default function TaskList() {
   const [progress, setProgress] = useState({ percentage: 0 })
   const match = useRouteMatch()
+  console.log(match.params)
 
   return (
     <main>
@@ -135,7 +136,7 @@ const Frame = styled.section`
     width: 175px;
     margin: 0.5em;
     text-decoration: none;
-    font-size: 0.75rem;
+    font-size: .8rem;
     text-align: center;
 
     &:active {

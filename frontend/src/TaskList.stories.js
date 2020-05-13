@@ -8,4 +8,4 @@ export default {
   decorators: [withMobileWrapper],
 }
 
-export const firstTasks = () => <TaskList match={{ params: { id: 1 } }} />
+export const firstTasks = () => <TaskList match={{ params: { taskId: 1 } }} />

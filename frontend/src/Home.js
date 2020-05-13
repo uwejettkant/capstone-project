@@ -23,7 +23,7 @@ const NavLinkStyled = styled(NavLink)`
   background: #fff;
   color: #000;
   width: 200px;
-  height: 200px;
+  height: 150px;
   margin: 0 auto;
   border-radius: 25px;
   padding: 1em;
@@ -33,6 +33,10 @@ const NavLinkStyled = styled(NavLink)`
   justify-content: center;
   text-decoration: none;
   color: #12263d;
+
+  h4 {
+    margin: 0;
+  }
 `
 
 const LinkWrapper = styled.div`
