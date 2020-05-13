@@ -7,12 +7,12 @@ export default function Home() {
     <>
       <LinkWrapper>
         <NavLinkStyled to="/task/1">
-          <h4>
+          <Headline>
             Schritt für Schritt Anleitung für den Import physischer Produkte
-          </h4>
+          </Headline>
         </NavLinkStyled>
         <NavLinkStyled to="/individual-notes">
-          <h4>Meine Notizen</h4>
+          <Headline>Meine Notizen</Headline>
         </NavLinkStyled>
       </LinkWrapper>
     </>
@@ -23,7 +23,7 @@ const NavLinkStyled = styled(NavLink)`
   background: #fff;
   color: #000;
   width: 200px;
-  height: 200px;
+  height: 150px;
   margin: 0 auto;
   border-radius: 25px;
   padding: 1em;
@@ -42,4 +42,7 @@ const LinkWrapper = styled.div`
   align-items: center;
   justify-content: space-evenly;
   height: 500px;
+`
+const Headline = styled.h4`
+   margin: 0;
 `
