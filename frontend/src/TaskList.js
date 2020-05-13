@@ -101,7 +101,7 @@ const Frame = styled.section`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 575px;
+  height: 500px;
   width: 350px;
   color: #fff;
   font-size: 1.125rem;
