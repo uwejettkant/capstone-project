@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import styled from 'styled-components/macro'
 
 
-export default function CreateShipment() {
+export default function CreateShipment({ addShipment }) {
   
   const [entry, setEntry] = useState({  
-    BL: '',
-    Palettenanzahl: '',
+    Bl: '',
+    Palettenanzahl: 0,
     Lieferant: '',
     Warenbeschreibung: '',
     etd: '',
@@ -15,8 +15,8 @@ export default function CreateShipment() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    // addNotice(value)
-    console.log(entry)
+    addShipment(entry)
+    // console.log(entry)
     setEntry('')
   }
 
@@ -24,14 +24,14 @@ export default function CreateShipment() {
     <main>
       <Headline>Erfasse Deine Sendung</Headline>
       <FormStyled onSubmit={handleSubmit}>
-        <LabelStyled htmlFor="BL">BL Nr.:</LabelStyled>
+        <LabelStyled htmlFor="Bl">Bl Nr.:</LabelStyled>
         <InputStyled
-          id="BL"
-          name="BL"
+          id="Bl"
+          name="Bl"
           type="text"
-          value={entry.BL}
+          value={entry.Bl}
           onChange={(e) => setEntry({ ...entry, [e.target.name]: e.target.value })}
-          placeholder="BL Nr."
+          placeholder="Bl Nr."
           required
         />
 
@@ -39,7 +39,7 @@ export default function CreateShipment() {
         <InputStyled
           id="Palettenanzahl"
           name="Palettenanzahl"
-          type="text"
+          type="number"
           value={entry.Palettenanzahl}
           onChange={(e) => setEntry({ ...entry, [e.target.name]: e.target.value })}
           placeholder="Palettenanzahl"

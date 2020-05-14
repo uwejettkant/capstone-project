@@ -17,6 +17,9 @@ export default function Home() {
         <NavLinkStyled to="/create-shipment">
           <Headline>Erfasse Deine Seefracht</Headline>
         </NavLinkStyled>
+        <NavLinkStyled to="/my-shipments">
+          <Headline>Deine Seefracht Sendungen</Headline>
+        </NavLinkStyled>
       </LinkWrapper>
     </>
   )
