@@ -4,7 +4,7 @@ import NoteForm from './NoteForm'
 import styled from 'styled-components/macro'
 
 export default function IndividualNotes() {
-  const [notice, setNotice] = useState([
+  const [note, setNote] = useState([
     {
       text: 'Lieferanten finden',
       isCompleted: false,
@@ -19,36 +19,36 @@ export default function IndividualNotes() {
     },
   ])
 
-  function addNotice(text) {
-    const newNotice = [...notice, { text }]
-    setNotice(newNotice)
+  function addNote(text) {
+    const newNotice = [...note, { text }]
+    setNote(newNotice)
   }
 
-  function completeNotice(index) {
-    const newNotice = [...notice]
+  function completeNote(index) {
+    const newNotice = [...note]
     newNotice[index].isCompleted = true
-    setNotice(newNotice)
+    setNote(newNotice)
   }
 
-  function removeNotice(index) {
-    const newNotice = [...notice]
+  function removeNote(index) {
+    const newNotice = [...note]
     newNotice.splice(index, 1)
-    setNotice(newNotice)
+    setNote(newNotice)
   }
 
   return (
     <main>
       <NoteListWrapper>
-        {notice.map((notice, index) => (
+        {note.map((note, index) => (
           <NoteDescription
             key={index}
             index={index}
-            notice={notice}
-            completeNotice={completeNotice}
-            removeNotice={removeNotice}
+            note={note}
+            completeNote={completeNote}
+            removeNote={removeNote}
           />
         ))}
-        <NoteForm addNotice={addNotice} defaultText="Deine Notiz" />
+        <NoteForm addNote={addNote} defaultText="Deine Notiz" />
       </NoteListWrapper>
     </main>
   )

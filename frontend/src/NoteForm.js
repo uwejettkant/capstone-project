@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import styled from 'styled-components/macro'
 
-export default function NoteForm({ addNotice, defaultText }) {
+export default function NoteForm({ addNote, defaultText }) {
   const [value, setValue] = useState('')
 
   function handleSubmit(e) {
     e.preventDefault()
-    addNotice(value)
+    addNote(value)
     setValue('')
   }
 
@@ -46,7 +46,7 @@ const InputStyled = styled.input`
   width: 250px;
   border: none;
   border-radius: 5px;
-  padding: 1em;
+  padding: 0.75em;
   margin: 0.75em;
   font-size: 1em;
 `

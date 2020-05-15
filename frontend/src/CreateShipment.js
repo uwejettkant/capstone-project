@@ -78,7 +78,7 @@ export default function CreateShipment({ addShipment }) {
           required
         />
 
-        <LabelStyled htmlFor="etd">Schiffabfahrt Origin:</LabelStyled>
+        <LabelStyled htmlFor="etd">Schiffabfahrt Übersee:</LabelStyled>
         <InputStyled
           id="etd"
           name="etd"
@@ -90,7 +90,7 @@ export default function CreateShipment({ addShipment }) {
           required
         />
 
-        <LabelStyled htmlFor="eta">Schiffsankunft Destination:</LabelStyled>
+        <LabelStyled htmlFor="eta">Schiffsankunft Hamburg:</LabelStyled>
         <InputStyled
           id="eta"
           name="eta"
@@ -137,7 +137,7 @@ const InputStyled = styled.input`
   width: 250px;
   border: none;
   border-radius: 5px;
-  padding: 1em;
+  padding: 0.75em;
   margin: 1em;
   font-size: 1rem;
 `
