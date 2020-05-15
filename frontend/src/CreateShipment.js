@@ -14,7 +14,6 @@ export default function CreateShipment({ addShipment }) {
   function handleSubmit(e) {
     e.preventDefault()
     addShipment(entry)
-    // console.log(entry)
     setEntry({
       Bl: '',
       Palettenanzahl: '',
@@ -35,10 +34,9 @@ export default function CreateShipment({ addShipment }) {
           name="Bl"
           type="text"
           value={entry.Bl}
-          onChange={(e) =>
-            setEntry({ ...entry, [e.target.name]: e.target.value })
-          }
+          onChange={updateEntry}
           placeholder="Bl Nr."
+          maxLength="40"
           required
         />
 
@@ -48,10 +46,9 @@ export default function CreateShipment({ addShipment }) {
           name="Palettenanzahl"
           type="number"
           value={entry.Palettenanzahl}
-          onChange={(e) =>
-            setEntry({ ...entry, [e.target.name]: e.target.value })
-          }
+          onChange={updateEntry}
           placeholder="Palettenanzahl"
+          maxLength="40"
           required
         />
 
@@ -61,10 +58,9 @@ export default function CreateShipment({ addShipment }) {
           name="Lieferant"
           type="text"
           value={entry.Lieferant}
-          onChange={(e) =>
-            setEntry({ ...entry, [e.target.name]: e.target.value })
-          }
+          onChange={updateEntry}
           placeholder="Lieferant"
+          maxLength="40"
           required
         />
 
@@ -76,10 +72,9 @@ export default function CreateShipment({ addShipment }) {
           name="Warenbeschreibung"
           type="text"
           value={entry.Warenbeschreibung}
-          onChange={(e) =>
-            setEntry({ ...entry, [e.target.name]: e.target.value })
-          }
+          onChange={updateEntry}
           placeholder="Warenbeschreibung"
+          maxLength="40"
           required
         />
 
@@ -89,10 +84,9 @@ export default function CreateShipment({ addShipment }) {
           name="etd"
           type="date"
           value={entry.etd}
-          onChange={(e) =>
-            setEntry({ ...entry, [e.target.name]: e.target.value })
-          }
+          onChange={updateEntry}
           placeholder="etd"
+          maxLength="40"
           required
         />
 
@@ -102,16 +96,18 @@ export default function CreateShipment({ addShipment }) {
           name="eta"
           type="date"
           value={entry.eta}
-          onChange={(e) =>
-            setEntry({ ...entry, [e.target.name]: e.target.value })
-          }
+          onChange={updateEntry}
           placeholder="eta"
+          maxLength="40"
           required
         />
         <InputStyled type="submit" value="Abschicken" />
       </FormStyled>
     </main>
   )
+  function updateEntry(e) {
+    setEntry({ ...entry, [e.target.name]: e.target.value })
+  }
 }
 
 const Headline = styled.h2`

@@ -6,13 +6,8 @@ export default function MyShipments({ shipment, deleteShipment }) {
   return (
     <main>
       <Wrapper>
-        {shipment.map((shipment, index, input) => (
-          <ShipmentCard
-            key={index}
-            index={index}
-            shipment={shipment}
-            input={input}
-          >
+        {shipment.map((shipment, index) => (
+          <CardContainer key={index} index={index} shipment={shipment}>
             <Imagewrapper>
               <img src={Pallets} alt="pallets" />
             </Imagewrapper>
@@ -28,7 +23,7 @@ export default function MyShipments({ shipment, deleteShipment }) {
                 Löschen
               </DeleteButton>
             </ButtonWrapper>
-          </ShipmentCard>
+          </CardContainer>
         ))}
       </Wrapper>
     </main>
@@ -47,7 +42,7 @@ const Wrapper = styled.section`
   align-items: center;
 `
 
-const ShipmentCard = styled.section`
+const CardContainer = styled.section`
   background: #fff;
   color: #214159;
   width: 300px;

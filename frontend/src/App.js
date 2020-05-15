@@ -21,15 +21,15 @@ export default function App() {
     },
   ])
 
-  function addShipment(input) {
-    const newShipment = [...shipment, { input }]
+  function addShipment(entry) {
+    const newShipment = [...shipment, entry]
     setShipment(newShipment)
   }
 
   function deleteShipment(index) {
-    const newShipment = [...shipment]
-    newShipment.splice(index, 1)
-    setShipment(newShipment)
+    const discardShipment = [...shipment]
+    discardShipment.splice(index, 1)
+    setShipment(discardShipment)
   }
 
   return (
