@@ -29,7 +29,6 @@ ProgressBar.propTypes = {
 export default function TaskList() {
   const [progress, setProgress] = useState({ percentage: 0 })
   const match = useRouteMatch()
-  console.log(match.params)
 
   return (
     <main>

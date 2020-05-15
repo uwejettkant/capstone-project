@@ -2,25 +2,25 @@ import React from 'react'
 import styled from 'styled-components/macro'
 
 export default function NoteDescription({
-  notice,
+  note,
   index,
-  completeNotice,
-  removeNotice,
+  completeNote,
+  removeNote,
 }) {
   return (
     <>
       <MyNotes
         style={{
-          textDecorationThickness: notice.isCompleted ? '0.1em' : '',
+          textDecorationThickness: note.isCompleted ? '0.1em' : '',
         }}
-        notice={notice}
+        note={note}
       >
-        {notice.text}
+        {note.text}
         <ButtonWrapper>
-          <DescriptionButton onClick={() => completeNotice(index)}>
+          <DescriptionButton onClick={() => completeNote(index)}>
             Erledigt
           </DescriptionButton>
-          <DescriptionButton onClick={() => removeNotice(index)}>
+          <DescriptionButton onClick={() => removeNote(index)}>
             Löschen
           </DescriptionButton>
         </ButtonWrapper>
@@ -30,8 +30,7 @@ export default function NoteDescription({
 }
 
 const MyNotes = styled.section`
-  text-decoration: ${(props) =>
-    props.notice.isCompleted ? 'line-through' : ''};
+  text-decoration: ${(props) => (props.note.isCompleted ? 'line-through' : '')};
   color: #fff;
   font-size: 1.15rem;
   font-weight: bold;
@@ -46,7 +45,7 @@ const ButtonWrapper = styled.div`
 
 const DescriptionButton = styled.button`
   border: none;
-  padding: 0.5em;
+  padding: 1em;
   font-size: 0.75rem;
   border: none;
   margin-right: 1em;
