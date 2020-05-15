@@ -37,7 +37,7 @@ const FormStyled = styled.form`
 
 const LabelStyled = styled.label`
   color: #fff;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: bold;
   margin-left: 0.5em;
 `
@@ -46,6 +46,7 @@ const InputStyled = styled.input`
   width: 250px;
   border: none;
   border-radius: 5px;
-  padding: 0.5em;
-  margin: 1em;
+  padding: 1em;
+  margin: 0.75em;
+  font-size: 1em;
 `

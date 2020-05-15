@@ -6,7 +6,7 @@ import styled from 'styled-components/macro'
 export default function IndividualNotes() {
   const [notice, setNotice] = useState([
     {
-      text: 'Liefranten finden',
+      text: 'Lieferanten finden',
       isCompleted: false,
     },
     {
@@ -48,7 +48,7 @@ export default function IndividualNotes() {
             removeNotice={removeNotice}
           />
         ))}
-        <NoteForm addNotice={addNotice} defaultText='Deine Notiz'/>
+        <NoteForm addNotice={addNotice} defaultText="Deine Notiz" />
       </NoteListWrapper>
     </main>
   )

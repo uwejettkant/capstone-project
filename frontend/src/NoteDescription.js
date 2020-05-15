@@ -46,7 +46,7 @@ const ButtonWrapper = styled.div`
 
 const DescriptionButton = styled.button`
   border: none;
-  padding: 0.5em;
+  padding: 1em;
   font-size: 0.75rem;
   border: none;
   margin-right: 1em;

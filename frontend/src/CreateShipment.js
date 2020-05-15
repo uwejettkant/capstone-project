@@ -1,12 +1,10 @@
 import React, { useState } from 'react'
 import styled from 'styled-components/macro'
 
-
 export default function CreateShipment({ addShipment }) {
-  
-  const [entry, setEntry] = useState({  
+  const [entry, setEntry] = useState({
     Bl: '',
-    Palettenanzahl: 0,
+    Palettenanzahl: '',
     Lieferant: '',
     Warenbeschreibung: '',
     etd: '',
@@ -17,7 +15,14 @@ export default function CreateShipment({ addShipment }) {
     e.preventDefault()
     addShipment(entry)
     // console.log(entry)
-    setEntry('')
+    setEntry({
+      Bl: '',
+      Palettenanzahl: '',
+      Lieferant: '',
+      Warenbeschreibung: '',
+      etd: '',
+      eta: '',
+    })
   }
 
   return (
@@ -30,7 +35,9 @@ export default function CreateShipment({ addShipment }) {
           name="Bl"
           type="text"
           value={entry.Bl}
-          onChange={(e) => setEntry({ ...entry, [e.target.name]: e.target.value })}
+          onChange={(e) =>
+            setEntry({ ...entry, [e.target.name]: e.target.value })
+          }
           placeholder="Bl Nr."
           required
         />
@@ -41,7 +48,9 @@ export default function CreateShipment({ addShipment }) {
           name="Palettenanzahl"
           type="number"
           value={entry.Palettenanzahl}
-          onChange={(e) => setEntry({ ...entry, [e.target.name]: e.target.value })}
+          onChange={(e) =>
+            setEntry({ ...entry, [e.target.name]: e.target.value })
+          }
           placeholder="Palettenanzahl"
           required
         />
@@ -52,18 +61,24 @@ export default function CreateShipment({ addShipment }) {
           name="Lieferant"
           type="text"
           value={entry.Lieferant}
-          onChange={(e) => setEntry({ ...entry, [e.target.name]: e.target.value })}
+          onChange={(e) =>
+            setEntry({ ...entry, [e.target.name]: e.target.value })
+          }
           placeholder="Lieferant"
           required
         />
 
-        <LabelStyled htmlFor="Warenbeschreibung">Warenbeschreibung:</LabelStyled>
+        <LabelStyled htmlFor="Warenbeschreibung">
+          Warenbeschreibung:
+        </LabelStyled>
         <InputStyled
           id="Warenbeschreibung"
           name="Warenbeschreibung"
           type="text"
           value={entry.Warenbeschreibung}
-          onChange={(e) => setEntry({ ...entry, [e.target.name]: e.target.value })}
+          onChange={(e) =>
+            setEntry({ ...entry, [e.target.name]: e.target.value })
+          }
           placeholder="Warenbeschreibung"
           required
         />
@@ -74,7 +89,9 @@ export default function CreateShipment({ addShipment }) {
           name="etd"
           type="date"
           value={entry.etd}
-          onChange={(e) => setEntry({ ...entry, [e.target.name]: e.target.value })}
+          onChange={(e) =>
+            setEntry({ ...entry, [e.target.name]: e.target.value })
+          }
           placeholder="etd"
           required
         />
@@ -85,35 +102,28 @@ export default function CreateShipment({ addShipment }) {
           name="eta"
           type="date"
           value={entry.eta}
-          onChange={(e) => setEntry({ ...entry, [e.target.name]: e.target.value })}
+          onChange={(e) =>
+            setEntry({ ...entry, [e.target.name]: e.target.value })
+          }
           placeholder="eta"
           required
-        /> 
+        />
         <InputStyled type="submit" value="Abschicken" />
-        </FormStyled>
+      </FormStyled>
     </main>
-  )}
+  )
+}
 
-
-//   function handleSubmit(event) {
-//     event.preventDefault()
-//     let newShipment = {
-//       BL: entry.BL,
-//       Palettenanzahl: entry.Palettenanzahl,
-//       Lieferant: entry.Lieferant,
-//       Warenbeschreibung: entry.Warenbeschreibung,
-//       etd: entry.etd,
-//       eta: entry.eta,
-//     }
-
-const Headline = styled.h3`
-    color: #fff;
+const Headline = styled.h2`
+  color: #fff;
+  text-align: center;
 `
-
 
 const FormStyled = styled.form`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border: none;
   border-radius: 5px;
   padding: 0.5em;
@@ -131,6 +141,7 @@ const InputStyled = styled.input`
   width: 250px;
   border: none;
   border-radius: 5px;
-  padding: 0.5em;
+  padding: 1em;
   margin: 1em;
+  font-size: 1rem;
 `
