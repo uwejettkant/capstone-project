@@ -134,7 +134,7 @@ const Frame = styled.section`
     width: 175px;
     margin: 0.5em;
     text-decoration: none;
-    font-size: .8rem;
+    font-size: 0.8rem;
     text-align: center;
 
     &:active {

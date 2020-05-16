@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import styled from 'styled-components/macro'
+import { db } from './firebase'
+import swal from 'sweetalert'
 
 export default function CreateShipment({ addShipment }) {
-  const [entry, setEntry] = useState({
+  const [shipmentData, steShipmentData] = useState({
     Bl: '',
     Palettenanzahl: '',
     Lieferant: '',
@@ -13,14 +15,20 @@ export default function CreateShipment({ addShipment }) {
 
   function handleSubmit(e) {
     e.preventDefault()
-    addShipment(entry)
-    setEntry({
+    db.collection('my-shipments').add(shipmentData)
+    // addShipment(shipmentData)
+    steShipmentData({
       Bl: '',
       Palettenanzahl: '',
       Lieferant: '',
       Warenbeschreibung: '',
       etd: '',
       eta: '',
+    })
+    swal({
+      title: 'Deine Daten wurden erfolgreich refasst!',
+      text: 'Gehe zu My Shipments, um deine Sendung zu sehen!',
+      icon: 'success',
     })
   }
 
@@ -33,7 +41,7 @@ export default function CreateShipment({ addShipment }) {
           id="Bl"
           name="Bl"
           type="text"
-          value={entry.Bl}
+          value={shipmentData.Bl}
           onChange={updateEntry}
           placeholder="Bl Nr."
           maxLength="40"
@@ -45,7 +53,7 @@ export default function CreateShipment({ addShipment }) {
           id="Palettenanzahl"
           name="Palettenanzahl"
           type="number"
-          value={entry.Palettenanzahl}
+          value={shipmentData.Palettenanzahl}
           onChange={updateEntry}
           placeholder="Palettenanzahl"
           maxLength="40"
@@ -57,7 +65,7 @@ export default function CreateShipment({ addShipment }) {
           id="Lieferant"
           name="Lieferant"
           type="text"
-          value={entry.Lieferant}
+          value={shipmentData.Lieferant}
           onChange={updateEntry}
           placeholder="Lieferant"
           maxLength="40"
@@ -71,7 +79,7 @@ export default function CreateShipment({ addShipment }) {
           id="Warenbeschreibung"
           name="Warenbeschreibung"
           type="text"
-          value={entry.Warenbeschreibung}
+          value={shipmentData.Warenbeschreibung}
           onChange={updateEntry}
           placeholder="Warenbeschreibung"
           maxLength="40"
@@ -83,7 +91,7 @@ export default function CreateShipment({ addShipment }) {
           id="etd"
           name="etd"
           type="date"
-          value={entry.etd}
+          value={shipmentData.etd}
           onChange={updateEntry}
           placeholder="etd"
           maxLength="40"
@@ -95,7 +103,7 @@ export default function CreateShipment({ addShipment }) {
           id="eta"
           name="eta"
           type="date"
-          value={entry.eta}
+          value={shipmentData.eta}
           onChange={updateEntry}
           placeholder="eta"
           maxLength="40"
@@ -106,7 +114,7 @@ export default function CreateShipment({ addShipment }) {
     </main>
   )
   function updateEntry(e) {
-    setEntry({ ...entry, [e.target.name]: e.target.value })
+    steShipmentData({ ...shipmentData, [e.target.name]: e.target.value })
   }
 }
 
