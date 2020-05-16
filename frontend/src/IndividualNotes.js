@@ -1,28 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import NoteDescription from './NoteDescription'
 import NoteForm from './NoteForm'
 import styled from 'styled-components/macro'
+import { db } from './firebase'
 
 export default function IndividualNotes() {
-  const [note, setNote] = useState([
-    {
-      text: 'Lieferanten finden',
-      isCompleted: false,
-    },
-    {
-      text: 'Lieferbedingung festlegen',
-      isCompleted: false,
-    },
-    {
-      text: 'Kosten kalkulieren',
-      isCompleted: false,
-    },
-  ])
+  const [note, setNote] = useState([])
 
-  function addNote(text) {
-    const newNotice = [...note, { text }]
-    setNote(newNotice)
-  }
+  useEffect(() => {
+    db.collection('individual-notes').onSnapshot((snapshot) => {
+      const getNotes = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }))
+      setNote(getNotes)
+    })
+  }, [])
 
   function completeNote(index) {
     const newNotice = [...note]
@@ -48,7 +41,7 @@ export default function IndividualNotes() {
             removeNote={removeNote}
           />
         ))}
-        <NoteForm addNote={addNote} defaultText="Deine Notiz" />
+        <NoteForm defaultText="Deine Notiz" />
       </NoteListWrapper>
     </main>
   )

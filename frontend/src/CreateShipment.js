@@ -24,7 +24,6 @@ export default function CreateShipment() {
           error
         )
       )
-    // addShipment(shipmentData)
     setShipmentData({
       Bl: '',
       Palettenanzahl: '',

@@ -15,7 +15,7 @@ export default function NoteDescription({
         }}
         note={note}
       >
-        {note.text}
+        {note.value}
         <ButtonWrapper>
           <DescriptionButton onClick={() => completeNote(index)}>
             Erledigt

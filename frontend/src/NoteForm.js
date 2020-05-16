@@ -1,12 +1,21 @@
 import React, { useState } from 'react'
 import styled from 'styled-components/macro'
+import { db } from './firebase'
 
-export default function NoteForm({ addNote, defaultText }) {
+export default function NoteForm({ defaultText }) {
   const [value, setValue] = useState('')
 
   function handleSubmit(e) {
     e.preventDefault()
-    addNote(value)
+    db.collection('individual-notes')
+      .add({ value })
+      .then(() => console.log('New event added'))
+      .catch((error) =>
+        alert(
+          'Oops, etwas ist schief gelaufen. Bitte versuche es später erneut.',
+          error
+        )
+      )
     setValue('')
   }
 
@@ -47,6 +56,6 @@ const InputStyled = styled.input`
   border: none;
   border-radius: 5px;
   padding: 0.75em;
-  margin: 0.75em;
+  margin: 0.5em;
   font-size: 1em;
 `

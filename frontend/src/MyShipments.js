@@ -19,7 +19,7 @@ export default function MyShipments({ shipment, deleteShipment }) {
               <p>eta: {shipment.eta}</p>
             </DataWrapper>
             <ButtonWrapper>
-              <DeleteButton onClick={() => deleteShipment(index)}>
+              <DeleteButton onClick={() => deleteShipment(deleteShipment)}>
                 Löschen
               </DeleteButton>
             </ButtonWrapper>
