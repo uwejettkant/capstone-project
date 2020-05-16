@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import GlobalStyles from './GlobalStyles'
 import Header from './Header'
 import Home from './Home'
@@ -8,23 +8,20 @@ import CreateShipment from './CreateShipment'
 import MyShipments from './MyShipments'
 import Footer from './Footer'
 import { Switch, Route } from 'react-router-dom'
+import { db } from './firebase'
 
 export default function App() {
-  const [shipment, setShipment] = useState([
-    {
-      Bl: 'XZZ3527',
-      Palettenanzahl: 2,
-      Lieferant: 'Saftpressenwerk',
-      Warenbeschreibung: 'Saftpresse',
-      etd: '25.04.19',
-      eta: '30.05.19',
-    },
-  ])
+  const [shipment, setShipment] = useState([])
 
-  function addShipment(entry) {
-    const newShipment = [...shipment, entry]
-    setShipment(newShipment)
-  }
+  useEffect(() => {
+    db.collection('my-shipments').onSnapshot((snapshot) => {
+      const newShipment = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }))
+      setShipment(newShipment)
+    })
+  }, [])
 
   function deleteShipment(index) {
     const discardShipment = [...shipment]
@@ -47,7 +44,7 @@ export default function App() {
           <IndividualNotes />
         </Route>
         <Route path="/create-shipment">
-          <CreateShipment addShipment={addShipment} />
+          <CreateShipment />
         </Route>
         <Route path="/my-shipments">
           <MyShipments deleteShipment={deleteShipment} shipment={shipment} />

@@ -3,8 +3,8 @@ import styled from 'styled-components/macro'
 import { db } from './firebase'
 import swal from 'sweetalert'
 
-export default function CreateShipment({ addShipment }) {
-  const [shipmentData, steShipmentData] = useState({
+export default function CreateShipment() {
+  const [shipmentData, setShipmentData] = useState({
     Bl: '',
     Palettenanzahl: '',
     Lieferant: '',
@@ -15,9 +15,17 @@ export default function CreateShipment({ addShipment }) {
 
   function handleSubmit(e) {
     e.preventDefault()
-    db.collection('my-shipments').add(shipmentData)
+    db.collection('my-shipments')
+      .add(shipmentData)
+      .then(() => console.log('New event added'))
+      .catch((error) =>
+        alert(
+          'Oops, etwas ist schief gelaufen. Bitte versuche es später erneut.',
+          error
+        )
+      )
     // addShipment(shipmentData)
-    steShipmentData({
+    setShipmentData({
       Bl: '',
       Palettenanzahl: '',
       Lieferant: '',
@@ -114,7 +122,7 @@ export default function CreateShipment({ addShipment }) {
     </main>
   )
   function updateEntry(e) {
-    steShipmentData({ ...shipmentData, [e.target.name]: e.target.value })
+    setShipmentData({ ...shipmentData, [e.target.name]: e.target.value })
   }
 }
 
