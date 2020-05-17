@@ -34,7 +34,7 @@ export default function CreateShipment() {
     })
     swal({
       title: 'Deine Daten wurden erfolgreich refasst!',
-      text: 'Gehe zu My Shipments, um deine Sendung zu sehen!',
+      text: 'Gehe zu "Meine Seefracht", um deine Sendung zu sehen!',
       icon: 'success',
     })
   }

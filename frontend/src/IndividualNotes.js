@@ -5,7 +5,7 @@ import styled from 'styled-components/macro'
 import { db } from './firebase'
 
 export default function IndividualNotes() {
-  const [note, setNote] = useState([])
+  const [notes, setNotes] = useState([])
 
   useEffect(() => {
     db.collection('individual-notes').onSnapshot((snapshot) => {
@@ -13,30 +13,39 @@ export default function IndividualNotes() {
         id: doc.id,
         ...doc.data(),
       }))
-      setNote(getNotes)
+      setNotes(getNotes)
     })
   }, [])
 
   function completeNote(index) {
-    const newNotice = [...note]
+    const newNotice = [...notes]
     newNotice[index].isCompleted = true
-    setNote(newNotice)
+    setNotes(newNotice)
   }
 
-  function removeNote(index) {
-    const newNotice = [...note]
-    newNotice.splice(index, 1)
-    setNote(newNotice)
+  function removeNote(notes) {
+    db.collection('individual-notes')
+      .doc(notes.id)
+      .delete()
+      .then(function () {
+        console.log('Document successfully deleted!')
+      })
+      .catch(function (error) {
+        console.error(
+          'Oops, etwas ist schief gelaufen. Bitte versuche es später erneut.',
+          error
+        )
+      })
   }
 
   return (
     <main>
       <NoteListWrapper>
-        {note.map((note, index) => (
+        {notes.map((notes, index) => (
           <NoteDescription
             key={index}
             index={index}
-            note={note}
+            notes={notes}
             completeNote={completeNote}
             removeNote={removeNote}
           />
