@@ -1,11 +1,28 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components/macro'
 import Pallets from './images/pallets.jpg'
+import Filter from './Filter'
 import { db } from './firebase'
 import swal from 'sweetalert'
 
 export default function MyShipments() {
   const [shipment, setShipment] = useState([])
+  const [search, setSearch] = useState('')
+  const [filteredShipments, setFilteredShipments] = useState([])
+
+  useEffect(() => {
+    setFilteredShipments(
+      shipment.filter((shipment) => {
+        return (
+          shipment.Warenbeschreibung.toLowerCase().includes(
+            search.toLowerCase()
+          ) ||
+          shipment.Bl.toLowerCase().includes(search.toLowerCase()) ||
+          shipment.Lieferant.toLowerCase().includes(search.toLowerCase())
+        )
+      })
+    )
+  }, [search, shipment])
 
   useEffect(() => {
     db.collection('my-shipments').onSnapshot((snapshot) => {
@@ -49,7 +66,8 @@ export default function MyShipments() {
   return (
     <main>
       <Wrapper>
-        {shipment.map((shipment, index) => (
+        <Filter onChange={(e) => setSearch(e.target.value)} />
+        {filteredShipments.map((shipment, index) => (
           <CardContainer key={index} index={index} shipment={shipment}>
             <Imagewrapper>
               <img src={Pallets} alt="pallets" />
@@ -57,7 +75,8 @@ export default function MyShipments() {
             <DataWrapper>
               <p>BL Nr: {shipment.Bl}</p>
               <p>Palettenanzahl: {shipment.Palettenanzahl}</p>
-              <p>Lieferant: {shipment.Warenbeschreibung}</p>
+              <p>Lieferant: {shipment.Lieferant}</p>
+              <p>Warenbeschreibung: {shipment.Warenbeschreibung}</p>
               <p>etd: {shipment.etd}</p>
               <p>eta: {shipment.eta}</p>
             </DataWrapper>
@@ -77,8 +96,7 @@ const Wrapper = styled.section`
   border-radius: 5px;
   padding: 5px;
   max-width: 400px;
-  margin-top: 1em;
-  padding-top: 1em;
+  padding-top: 0.5em;
   display: flex;
   flex-direction: column;
   justify-content: center;
