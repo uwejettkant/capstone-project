@@ -1,54 +1,56 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import NoteDescription from './NoteDescription'
 import NoteForm from './NoteForm'
 import styled from 'styled-components/macro'
+import { db } from './firebase'
 
 export default function IndividualNotes() {
-  const [note, setNote] = useState([
-    {
-      text: 'Lieferanten finden',
-      isCompleted: false,
-    },
-    {
-      text: 'Lieferbedingung festlegen',
-      isCompleted: false,
-    },
-    {
-      text: 'Kosten kalkulieren',
-      isCompleted: false,
-    },
-  ])
+  const [notes, setNotes] = useState([])
 
-  function addNote(text) {
-    const newNotice = [...note, { text }]
-    setNote(newNotice)
-  }
+  useEffect(() => {
+    db.collection('individual-notes').onSnapshot((snapshot) => {
+      const getNotes = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }))
+      setNotes(getNotes)
+    })
+  }, [])
 
   function completeNote(index) {
-    const newNotice = [...note]
+    const newNotice = [...notes]
     newNotice[index].isCompleted = true
-    setNote(newNotice)
+    setNotes(newNotice)
   }
 
-  function removeNote(index) {
-    const newNotice = [...note]
-    newNotice.splice(index, 1)
-    setNote(newNotice)
+  function removeNote(notes) {
+    db.collection('individual-notes')
+      .doc(notes.id)
+      .delete()
+      .then(function () {
+        console.log('Document successfully deleted!')
+      })
+      .catch(function (error) {
+        console.error(
+          'Oops, etwas ist schief gelaufen. Bitte versuche es später erneut.',
+          error
+        )
+      })
   }
 
   return (
     <main>
       <NoteListWrapper>
-        {note.map((note, index) => (
+        {notes.map((notes, index) => (
           <NoteDescription
             key={index}
             index={index}
-            note={note}
+            notes={notes}
             completeNote={completeNote}
             removeNote={removeNote}
           />
         ))}
-        <NoteForm addNote={addNote} defaultText="Deine Notiz" />
+        <NoteForm defaultText="Deine Notiz" />
       </NoteListWrapper>
     </main>
   )

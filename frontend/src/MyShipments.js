@@ -1,8 +1,51 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components/macro'
 import Pallets from './images/pallets.jpg'
+import { db } from './firebase'
+import swal from 'sweetalert'
 
-export default function MyShipments({ shipment, deleteShipment }) {
+export default function MyShipments() {
+  const [shipment, setShipment] = useState([])
+
+  useEffect(() => {
+    db.collection('my-shipments').onSnapshot((snapshot) => {
+      const getShipments = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }))
+      setShipment(getShipments)
+    })
+  }, [])
+
+  function deleteShipment(shipment) {
+    swal({
+      title: 'Bist du dir sicher?',
+      text:
+        'Wenn die Daten gelöscht sind, können sie nicht wieder hergestellt werden.',
+      icon: 'warning',
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        db.collection('my-shipments')
+          .doc(shipment.id)
+          .delete()
+          .then(
+            swal('Ok. Deine Sendung wurde gelöscht!', {
+              icon: 'success',
+            })
+          )
+          .catch((error) =>
+            alert(
+              'Oops etwas ist schief gelaufen. Bitte versuche es später noch einmal.',
+              error
+            )
+          )
+      } else {
+        swal('Löschvorgang Abgebrochen')
+      }
+    })
+  }
   return (
     <main>
       <Wrapper>
@@ -19,7 +62,7 @@ export default function MyShipments({ shipment, deleteShipment }) {
               <p>eta: {shipment.eta}</p>
             </DataWrapper>
             <ButtonWrapper>
-              <DeleteButton onClick={() => deleteShipment(index)}>
+              <DeleteButton onClick={() => deleteShipment(shipment)}>
                 Löschen
               </DeleteButton>
             </ButtonWrapper>

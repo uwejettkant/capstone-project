@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components/macro'
-import userTask from './TaskList.json'
 import GetNextTaskButton from './GetNextTaskButton'
 import { Link, useRouteMatch } from 'react-router-dom'
 import Info from './images/info.jpg'
@@ -21,6 +20,7 @@ import Deal from './images/deal.jpg'
 import Congratulations from './images/congratulations.jpg'
 import ProgressBar from './ProgressBar'
 import PropTypes from 'prop-types'
+import { db } from './firebase'
 
 ProgressBar.propTypes = {
   percentage: PropTypes.number,
@@ -29,6 +29,19 @@ ProgressBar.propTypes = {
 export default function TaskList() {
   const [progress, setProgress] = useState({ percentage: 0 })
   const match = useRouteMatch()
+  const [userTask, setUserTask] = useState([])
+
+  useEffect(() => {
+    db.collection('TaskList')
+      .orderBy('id')
+      .onSnapshot((snapshot) => {
+        const getTasks = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }))
+        setUserTask(getTasks)
+      })
+  }, [])
 
   return (
     <main>
@@ -134,7 +147,7 @@ const Frame = styled.section`
     width: 175px;
     margin: 0.5em;
     text-decoration: none;
-    font-size: .8rem;
+    font-size: 0.8rem;
     text-align: center;
 
     &:active {
