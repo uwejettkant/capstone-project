@@ -75,7 +75,8 @@ export default function MyShipments() {
             <DataWrapper>
               <p>BL Nr: {shipment.Bl}</p>
               <p>Palettenanzahl: {shipment.Palettenanzahl}</p>
-              <p>Lieferant: {shipment.Warenbeschreibung}</p>
+              <p>Lieferant: {shipment.Lieferant}</p>
+              <p>Warenbeschreibung: {shipment.Warenbeschreibung}</p>
               <p>etd: {shipment.etd}</p>
               <p>eta: {shipment.eta}</p>
             </DataWrapper>
