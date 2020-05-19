@@ -9,12 +9,9 @@ export default {
   decorators: [withMobileWrapper],
 }
 
-
 export const isActive = () => (
   <GetNextTaskButton
     defaultText="I am active"
     onClick={action('button was clicked')}
   />
 )
-
-

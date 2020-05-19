@@ -1,18 +1,17 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import { render } from '@testing-library/react'
 import GetNextTaskButton from './GetNextTaskButton'
 
-test('rendering button string', () => {
-  const container = document.createElement('section')
-  ReactDOM.render(<GetNextTaskButton>text</GetNextTaskButton>, container)
-  expect(container.textContent).toBe('')
-})
+// test('render button default text', () => {
+//   const { getByText } = render(<GetNextTaskButton />)
+//   expect(getByText('Zum Nächsten Schritt')).toBeInTheDocument()
+// })
 
-test('rendering button default text', () => {
+test('render text of one button', ({ defaultText }) => {
   const { getByText } = render(
-    <GetNextTaskButton defaultText="Zum Nächsten Schritt" />
+    <GetNextTaskButton defaultText={defaultText}>
+      {defaultText}
+    </GetNextTaskButton>
   )
-  const linkElement = getByText(/Starte Deinen Guide/i)
-  expect(linkElement).toBeInTheDocument()
+  expect(getByText('Zum Nächsten Schritt')).toBeInTheDocument()
 })

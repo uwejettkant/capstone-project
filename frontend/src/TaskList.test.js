@@ -2,9 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { render } from '@testing-library/react'
 import TaskList from './TaskList'
-import { MemoryRouter } from 'react-router-dom'
+import { MemoryRouter, Route } from 'react-router-dom'
 
-test('rendering headline Text', () => {
+/*test('render headline Text', () => {
   const { getByText } = render(
     <MemoryRouter>
       <TaskList match={{ params: { id: 1 } }} />
@@ -12,12 +12,14 @@ test('rendering headline Text', () => {
   )
   expect(getByText(/Eine kurze info vorab/i)).toBeInTheDocument()
 })
-
+*/
 test('rendering component Text', () => {
   const container = document.createElement('section')
   ReactDOM.render(
-    <MemoryRouter>
-      <TaskList match={{ params: { id: 1 } }} />
+    <MemoryRouter initialEntries={['/task/1']}>
+      <Route path="/task/:taskId">
+        <TaskList />
+      </Route>
     </MemoryRouter>,
     container
   )
@@ -26,7 +28,7 @@ test('rendering component Text', () => {
   )
 })
 
-test('rendering button component text', () => {
+/*test('rendering button component text', () => {
   const { getByText } = render(
     <MemoryRouter>
       <TaskList match={{ params: { id: 1 } }} />
@@ -35,4 +37,20 @@ test('rendering button component text', () => {
   const linkElement = getByText(/Zum Nächsten Schritt/i)
   expect(linkElement).toBeInTheDocument()
   // expect(getByText(/Zum Nächsten Schritt/i)).toBeInTheDocument()
+})
+*/
+
+it('renders link correctly', () => {
+  const tree = render
+    .create(
+      <MemoryRouter>
+        <Route>
+          <TaskList page="https://www.amazon.de/dp/B07V65RGDV">
+            Hol Dir Dein Buch
+          </TaskList>
+        </Route>
+      </MemoryRouter>
+    )
+    .toJSON()
+  expect(tree).toMatchSnapshot()
 })

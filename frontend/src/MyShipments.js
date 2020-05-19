@@ -77,8 +77,8 @@ export default function MyShipments() {
               <p>Palettenanzahl: {shipment.Palettenanzahl}</p>
               <p>Lieferant: {shipment.Lieferant}</p>
               <p>Warenbeschreibung: {shipment.Warenbeschreibung}</p>
-              <p>etd: {shipment.etd}</p>
-              <p>eta: {shipment.eta}</p>
+              <p>Abfahrt: {shipment.etd}</p>
+              <p>Ankunft: {shipment.eta}</p>
             </DataWrapper>
             <ButtonWrapper>
               <DeleteButton onClick={() => deleteShipment(shipment)}>
@@ -126,6 +126,10 @@ const DataWrapper = styled.section`
   padding: 1em;
   font-weight: bold;
   font-size: 1.15em;
+
+  p {
+    margin: 0.5em;
+  }
 `
 
 const DeleteButton = styled.button`
