@@ -29,6 +29,7 @@ export default function NoteForm({ defaultText }) {
         value={value}
         maxLength="40"
         onChange={(e) => setValue(e.target.value)}
+        required
       />
       <InputStyled type="submit" value="Abschicken" />
     </FormStyled>
