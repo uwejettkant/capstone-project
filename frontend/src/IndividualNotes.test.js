@@ -1,14 +1,13 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import App from './App'
+import IndividualNotes from './IndividualNotes'
 import { MemoryRouter } from 'react-router-dom'
 
-test('renders app name', () => {
+test('render headline Text', () => {
   const { getByText } = render(
     <MemoryRouter>
-      <App />
+      <IndividualNotes />
     </MemoryRouter>
   )
-  const linkElement = getByText(/Import Ganz Einfach/i)
-  expect(linkElement).toBeInTheDocument()
+  expect(getByText(/Deine Notiz/i)).toBeInTheDocument()
 })

@@ -19,7 +19,7 @@ const ButtonStyled = styled.button`
   width: 175px;
   margin-bottom: 1.25em;
   margin: 0.5em;
-  font-size: .75rem;
+  font-size: 0.75rem;
 
   &:active {
     transform: scale(1.1);
