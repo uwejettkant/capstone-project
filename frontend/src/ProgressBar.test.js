@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from '@testing-library/react'
 import ProgressBar from './ProgressBar'
 
-test('renders placeholder text', () => {
+test('renders if vaue is defined', () => {
   const value = render(<ProgressBar />)
   expect(value).toBeDefined()
 })
