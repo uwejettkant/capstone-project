@@ -16,10 +16,10 @@ const FooterStyled = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: transparent;
+  background: #e3e4e6;
 
   .fa-home {
-    color: #fff;
+    color: #2156e7;
     background: transparent;
     font-size: 2.5rem;
   }
