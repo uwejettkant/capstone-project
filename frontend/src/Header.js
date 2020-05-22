@@ -14,7 +14,6 @@ const LogoStyled = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background: transparent; */
   color: #fff;
   font-size: 1.5rem;
   font-weight: bold;

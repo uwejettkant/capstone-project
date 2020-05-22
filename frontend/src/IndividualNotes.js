@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import NoteDescription from './NoteDescription'
+import Notes from './Notes'
 import NoteForm from './NoteForm'
 import styled from 'styled-components/macro'
 import { db } from './firebase'
@@ -40,25 +40,56 @@ export default function IndividualNotes() {
 
   return (
     <main>
-      <NoteListWrapper>
-        {notes.map((notes, index) => (
-          <NoteDescription
-            key={index}
-            index={index}
-            notes={notes}
-            completeNote={completeNote}
-            removeNote={removeNote}
-          />
-        ))}
-        <NoteForm defaultText="Deine Notiz" />
-      </NoteListWrapper>
+      <BackgroundWrapperTop>
+        <h3>Notiz-Zettel</h3>
+        <ScrollingArea>
+          {notes.map((notes, index) => (
+            <Notes
+              key={index}
+              index={index}
+              notes={notes}
+              completeNote={completeNote}
+              removeNote={removeNote}
+            />
+          ))}
+          <NoteForm defaultText="Deine Notiz" />
+        </ScrollingArea>
+      </BackgroundWrapperTop>
     </main>
   )
 }
 
-const NoteListWrapper = styled.section`
-  border-radius: 5px;
-  padding: 5px;
-  max-width: 400px;
-  margin: 0 auto;
+const BackgroundWrapperTop = styled.div`
+  width: 375px;
+  height: 359px;
+  background-image: linear-gradient(115deg, #2156e7 6%, #1345d0 93%);
+
+  h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #91adf1;
+    text-align: center;
+    margin: 0;
+    padding-top: 0.5em;
+  }
+
+  p {
+    color: #91adf1;
+  }
+`
+
+const ScrollingArea = styled.section`
+  width: 300px;
+  height: 475px;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px 0 rgba(168, 164, 164, 0.5);
+  background-color: #fff;
+  overflow: scroll;
+  position: fixed;
+  top: 120px;
+  left: 37px;
 `

@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <main>
       <BackgroundWrapperTop>
-        <h3>Hello and hava a great Day!</h3>
+        <h3>Dein Step By Step Import Guide</h3>
         <LinkBox>
           <NavLinkStyled to="/task/1">
             <img className="guide-logo" src={Guide} alt="" />
