@@ -75,10 +75,6 @@ const BackgroundWrapperTop = styled.div`
     margin: 0;
     padding-top: 0.5em;
   }
-
-  p {
-    color: #91adf1;
-  }
 `
 
 const ScrollingArea = styled.section`
