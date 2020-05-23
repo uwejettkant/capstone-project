@@ -19,7 +19,7 @@ body {
 }
 
 main {
-    overflow: scroll;
+    overflow: hidden;
     margin: 0 auto;
 }
 `
