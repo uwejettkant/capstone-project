@@ -94,11 +94,11 @@ const BackgroundWrapperTop = styled.div`
     height: 84px;
     color: #fff;
     margin-top: 0;
-    top: 100px;
+    top: 90px;
   }
 
   .sub_headline  {
-    top: 175px;
+    top: 160px;
     color: #91adf1;
   }
 

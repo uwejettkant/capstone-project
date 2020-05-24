@@ -46,10 +46,13 @@ export default function TaskList() {
   return (
     <main>
       <CenteredWrapper>
+        <BackgroundWrapperTop>
+          <ProgressBar percentage={progress.percentage} />
+        </BackgroundWrapperTop>
         {userTask.map(
           (task, index) =>
             task.id === parseInt(match.params.taskId) && (
-              <Frame key={task.id}>
+              <ScrollingArea key={task.id}>
                 {task.id === 1 && <img src={Info} alt="info on wall" />}
                 {task.id === 2 && <img src={Product} alt="shop" />}
                 {task.id === 3 && <img src={Numbers} alt="pen and numbers" />}
@@ -70,95 +73,149 @@ export default function TaskList() {
                 )}
                 <h2 className="headline">{task.headline}</h2>
                 <p className="user-task-description">{task.todo}</p>
-                <div className="button-wrapper">
-                  {task.linkText && (
-                    <a className="link" href={task.url} target="blank">
-                      {task.linkText}
-                    </a>
-                  )}
-                  {task.linkTextOne && (
-                    <a className="link" href={task.urlOne} target="blank">
-                      {task.linkTextOne}
-                    </a>
-                  )}
-                  <Link to={`/task/${userTask[index + 1].id}`}>
-                    {task.id === 16 || (
-                      <GetNextTaskButton
-                        defaultText="Zum Nächsten Schritt"
-                        onClick={() =>
-                          setProgress({
-                            percentage: progress.percentage + 6.66,
-                          })
-                        }
-                      />
+                <>
+                  <LinkWrapper>
+                    {task.linkText && (
+                      <a className="link" href={task.url} target="blank">
+                        {task.linkText}
+                      </a>
                     )}
-                  </Link>
-                  <ProgressBar percentage={progress.percentage} />
-                </div>
-              </Frame>
+                    {task.linkTextOne && (
+                      <a className="link" href={task.urlOne} target="blank">
+                        {task.linkTextOne}
+                      </a>
+                    )}
+                  </LinkWrapper>
+                  <NavigationWrapper>
+                    <Link to={`/task/${userTask[index].id}`}>
+                      {task.id === 1 || (
+                        <GetNextTaskButton
+                          defaultText="Zurück"
+                          onClick={() =>
+                            setProgress({
+                              percentage: progress.percentage - 6.66,
+                            })
+                          }
+                        />
+                      )}
+                    </Link>
+                    <Link to={`/task/${userTask[index + 1].id}`}>
+                      {task.id === 16 || (
+                        <GetNextTaskButton
+                          defaultText="Weiter"
+                          onClick={() =>
+                            setProgress({
+                              percentage: progress.percentage + 6.66,
+                            })
+                          }
+                        />
+                      )}
+                    </Link>
+                  </NavigationWrapper>
+                </>
+              </ScrollingArea>
             )
         )}
       </CenteredWrapper>
     </main>
   )
 }
-const CenteredWrapper = styled.section`
+
+const BackgroundWrapperTop = styled.div`
+  width: 375px;
+  height: 359px;
+  background-image: linear-gradient(115deg, #2156e7 6%, #1345d0 93%);
+  position: absolute;
+  top: 48px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 1em;
+  justify-content: center;
+
+  h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #91adf1;
+    text-align: center;
+    margin: 0;
+    padding-top: 0.5em;
+  }
 `
-const Frame = styled.section`
+
+const ScrollingArea = styled.section`
+  width: 350px;
+  height: 500px;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px 0 rgba(168, 164, 164, 0.5);
+  background-color: #fff;
+  overflow: scroll;
+  position: fixed;
+  top: 100px;
+  left: 12px;
+  padding: 0.5em;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  height: 550px;
-  width: 350px;
-  color: #fff;
-  font-size: 1.125rem;
-  background: transparent;
-  border-radius: 25px;
 
   img {
-    height: 28%;
-    width: 100%;
+    width: 335px;
+    height: 150px;
     object-fit: cover;
+    border-radius: 5px;
   }
 
   .headline {
-    margin: 0.5em;
-    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.25rem;
+    font-weight: bold;
+    letter-spacing: 0.55px;
+    color: #222222;
   }
 
   .user-task-description {
-    padding: 1em;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.71;
+    letter-spacing: 0.38px;
+    color: #747f89;
     margin: 0;
-    font-size: 1rem;
   }
 
   .link {
-    background: linear-gradient(45deg, #fff, #accbfa);
-    padding: 0.5em;
+    width: 125px;
+    padding: 0.8em;
+    border-radius: 4px;
     border: none;
-    border-radius: 10px;
-    font-weight: bold;
-    color: #4287f5;
-    width: 175px;
-    margin: 0.5em;
+    font-size: 0.75rem;
+    background-color: #194cda;
+    color: #fff;
     text-decoration: none;
-    font-size: 0.8rem;
+    margin: 0.5em;
     text-align: center;
 
     &:active {
       transform: scale(1.1);
     }
   }
+`
 
-  .button-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-  }
+const CenteredWrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1em;
+`
+
+const NavigationWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
+
+const LinkWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
 `

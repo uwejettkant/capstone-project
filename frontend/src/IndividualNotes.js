@@ -69,7 +69,6 @@ const BackgroundWrapperTop = styled.div`
     font-size: 1.75rem;
     font-weight: 500;
     line-height: 1.5;
-    letter-spacing: normal;
     color: #91adf1;
     text-align: center;
     margin: 0;
