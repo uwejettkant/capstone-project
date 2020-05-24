@@ -132,6 +132,12 @@ const BackgroundWrapperTop = styled.div`
     margin: 0;
     padding-top: 0.5em;
   }
+
+  .search-icon {
+    position: absolute;
+    top: 117px;
+    left: 20px;
+  }
 `
 
 const Wrapper = styled.section`
@@ -278,12 +284,12 @@ const DateWrapper = styled.div`
     grid-row: 1/-1;
   }
 
-  .departure {
+  .arrival {
     grid-column: 3/4;
     grid-row: 1/-1;
   }
 
-  .departure_prop {
+  .arrival_prop {
     grid-column: 4/5;
     grid-row: 1/-1;
   }

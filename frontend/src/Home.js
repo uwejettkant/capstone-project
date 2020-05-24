@@ -5,12 +5,15 @@ import Guide from './images/guide.png'
 import Note from './images/note.png'
 import Create from './images/create.png'
 import Myship from './images/myship.png'
+import Vector from './images/vector.png'
 
 export default function Home() {
   return (
     <main>
       <BackgroundWrapperTop>
-        <h3>Dein Step By Step Import Guide</h3>
+        <img className="vector" src={Vector} alt="" />
+        <h3 className="headline">Dein Step By Step Import Guide</h3>
+        <h3 className="sub_headline">Starte noch heute!</h3>
         <LinkBox>
           <NavLinkStyled to="/task/1">
             <img className="guide-logo" src={Guide} alt="" />
@@ -78,24 +81,38 @@ const BackgroundWrapperTop = styled.div`
   justify-content: space-around;
 
   h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 500;
+    line-height: 1.5;
+    position: absolute;
+    margin-left: 1em;
+  }
+
+  .headline {
     width: 246px;
     height: 84px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 28px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: normal;
     color: #fff;
     margin-top: 0;
-    margin-left: 2em;
+    top: 100px;
+  }
+
+  .sub_headline  {
+    top: 175px;
+    color: #91adf1;
+  }
+
+  .vector {
+    position: relative;
+    top: 0;
+    opacity: 0.64;
   }
 `
 
 const LinkBox = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  position: relative;
 `
 const BackgroundWrapperBottom = styled.div`
   width: 375px;
