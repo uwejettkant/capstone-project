@@ -65,11 +65,7 @@ const BackgroundWrapperTop = styled.div`
   background-image: linear-gradient(115deg, #2156e7 6%, #1345d0 93%);
 
   h3 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.75rem;
-    font-weight: 500;
-    line-height: 1.5;
-    color: #91adf1;
+    color: var(--blured-blue);
     text-align: center;
     margin: 0;
     padding-top: 0.5em;

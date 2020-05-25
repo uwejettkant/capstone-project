@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components/macro'
-import Pallets from './images/pallets.jpg'
+import pallets from './images/pallets.jpg'
 import Search from './images/search-icon.png'
 import Filter from './Filter'
 import { db } from './firebase'
@@ -76,7 +76,7 @@ export default function MyShipments() {
           <CardContainer key={index} index={index} shipment={shipment}>
             <FlexWrapper>
               <Imagewrapper>
-                <img className="card_image" src={Pallets} alt="pallets" />
+                <img className="card_image" src={pallets} alt="pallets" />
               </Imagewrapper>
               <DataWrapper>
                 <p className="bl_no">BL Nr:</p>
@@ -122,11 +122,7 @@ const BackgroundWrapperTop = styled.div`
   background-image: linear-gradient(115deg, #2156e7 6%, #1345d0 93%);
 
   h3 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.75rem;
-    font-weight: 500;
-    line-height: 1.5;
-    color: #91adf1;
+    color: var(--blured-blue);
     text-align: center;
     margin: 0;
     padding-top: 0.5em;
@@ -191,7 +187,6 @@ const DataWrapper = styled.section`
   font-size: 1.15em;
   justify-content: space-between;
   height: 17px;
-  font-family: 'Roboto', sans-serif;
   font-size: 0.8em;
   font-weight: 500;
   line-height: 1.42;
@@ -203,11 +198,10 @@ const DataWrapper = styled.section`
 
   .prop_global {
     text-align: end;
-    font-family: 'Roboto', sans-serif;
     font-size: 0.75rem;
     font-weight: 500;
     line-height: 1.42;
-    color: #222222;
+    color: var(--dark-text);
   }
 
   .bl-no {
@@ -270,7 +264,7 @@ const DateWrapper = styled.div`
     font-size: 0.75rem;
     font-weight: 500;
     line-height: 1.42;
-    color: #222222;
+    color: var(--dark-text);
   }
 
   .departure {
@@ -301,7 +295,7 @@ const DeleteButton = styled.button`
   grid-column: 5/6;
   grid-row: 1/-1;
   background: transparent;
-  color: #f25e5e;
+  color: var(--delete-buton);
   font-size: 1rem;
   border: none;
   border-radius: 5px;

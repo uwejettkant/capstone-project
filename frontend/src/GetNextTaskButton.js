@@ -14,7 +14,7 @@ const ButtonStyled = styled.button`
   height: 35px;
   border-radius: 4px;
   border: none;
-  background-color: #194cda;
+  background-color: var(--button-color);
   color: #fff;
 
   &:active {

@@ -2,22 +2,22 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components/macro'
 import GetNextTaskButton from './GetNextTaskButton'
 import { Link, useRouteMatch } from 'react-router-dom'
-import Info from './images/info.jpg'
-import Product from './images/product.jpg'
-import Numbers from './images/numbers.jpg'
-import Restriction from './images/restriction.jpg'
-import Sample from './images/sample.jpg'
-import Dollar from './images/dollar.jpg'
-import Calculation from './images/calculation.jpg'
-import Contract from './images/contract.jpg'
-import Eori from './images/eori.jpg'
-import Container from './images/container.jpg'
-import Money from './images/money.jpg'
-import Data from './images/data.jpg'
-import Pallets from './images/pallets.jpg'
-import Tax from './images/tax.jpg'
-import Deal from './images/deal.jpg'
-import Congratulations from './images/congratulations.jpg'
+import info from './images/info.jpg'
+import product from './images/product.jpg'
+import numbers from './images/numbers.jpg'
+import restriction from './images/restriction.jpg'
+import sample from './images/sample.jpg'
+import dollar from './images/dollar.jpg'
+import calculation from './images/calculation.jpg'
+import contract from './images/contract.jpg'
+import eori from './images/eori.jpg'
+import container from './images/container.jpg'
+import money from './images/money.jpg'
+import data from './images/data.jpg'
+import pallets from './images/pallets.jpg'
+import tax from './images/tax.jpg'
+import deal from './images/deal.jpg'
+import congratulations from './images/congratulations.jpg'
 import ProgressBar from './ProgressBar'
 import PropTypes from 'prop-types'
 import { db } from './firebase'
@@ -53,23 +53,23 @@ export default function TaskList() {
           (task, index) =>
             task.id === parseInt(match.params.taskId) && (
               <ScrollingArea key={task.id}>
-                {task.id === 1 && <img src={Info} alt="info on wall" />}
-                {task.id === 2 && <img src={Product} alt="shop" />}
-                {task.id === 3 && <img src={Numbers} alt="pen and numbers" />}
-                {task.id === 4 && <img src={Restriction} alt="stop sign" />}
-                {task.id === 5 && <img src={Sample} alt="sample" />}
-                {task.id === 6 && <img src={Dollar} alt="one dollar" />}
-                {task.id === 7 && <img src={Calculation} alt="calculator" />}
-                {task.id === 8 && <img src={Contract} alt="contract" />}
-                {task.id === 9 && <img src={Eori} alt="documents on table" />}
-                {task.id === 10 && <img src={Container} alt="containers" />}
-                {task.id === 11 && <img src={Money} alt="money" />}
-                {task.id === 12 && <img src={Data} alt="data" />}
-                {task.id === 13 && <img src={Pallets} alt="pallets" />}
-                {task.id === 14 && <img src={Tax} alt="tax" />}
-                {task.id === 15 && <img src={Deal} alt="shaking hands" />}
+                {task.id === 1 && <img src={info} alt="info on wall" />}
+                {task.id === 2 && <img src={product} alt="shop" />}
+                {task.id === 3 && <img src={numbers} alt="pen and numbers" />}
+                {task.id === 4 && <img src={restriction} alt="stop sign" />}
+                {task.id === 5 && <img src={sample} alt="sample" />}
+                {task.id === 6 && <img src={dollar} alt="one dollar" />}
+                {task.id === 7 && <img src={calculation} alt="calculator" />}
+                {task.id === 8 && <img src={contract} alt="contract" />}
+                {task.id === 9 && <img src={eori} alt="documents on table" />}
+                {task.id === 10 && <img src={container} alt="containers" />}
+                {task.id === 11 && <img src={money} alt="money" />}
+                {task.id === 12 && <img src={data} alt="data" />}
+                {task.id === 13 && <img src={pallets} alt="pallets" />}
+                {task.id === 14 && <img src={tax} alt="tax" />}
+                {task.id === 15 && <img src={deal} alt="shaking hands" />}
                 {task.id === 16 && (
-                  <img src={Congratulations} alt="congratulations" />
+                  <img src={congratulations} alt="congratulations" />
                 )}
                 <h2 className="headline">{task.headline}</h2>
                 <p className="user-task-description">{task.todo}</p>
@@ -131,11 +131,6 @@ const BackgroundWrapperTop = styled.div`
   justify-content: center;
 
   h3 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.75rem;
-    font-weight: 500;
-    line-height: 1.5;
-    letter-spacing: normal;
     color: #91adf1;
     text-align: center;
     margin: 0;
@@ -167,15 +162,13 @@ const ScrollingArea = styled.section`
   }
 
   .headline {
-    font-family: 'Roboto', sans-serif;
     font-size: 1.25rem;
     font-weight: bold;
     letter-spacing: 0.55px;
-    color: #222222;
+    color: var(--dark-text);
   }
 
   .user-task-description {
-    font-family: 'Roboto', sans-serif;
     font-size: 0.75rem;
     line-height: 1.71;
     letter-spacing: 0.38px;
@@ -189,7 +182,7 @@ const ScrollingArea = styled.section`
     border-radius: 4px;
     border: none;
     font-size: 0.75rem;
-    background-color: #194cda;
+    background-color: var(--button-color);
     color: #fff;
     text-decoration: none;
     margin: 0.5em;

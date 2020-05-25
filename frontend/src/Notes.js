@@ -31,7 +31,7 @@ const Checkbox = styled.input`
   width: 13px;
   height: 13px;
   background-color: transparent;
-  color: #f25e5e;
+  color: var(--button-color);
   transition: all 0.2s ease-in-out;
   border: 2px solid #ececec;
   border-radius: 0.25rem;
@@ -61,5 +61,5 @@ const DescriptionButton = styled.button`
   border: none;
   border-radius: 5px;
   background: #fff;
-  color: #f25e5e;
+  color: var(--delete-buton);
 `

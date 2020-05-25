@@ -1,34 +1,50 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 import { NavLink } from 'react-router-dom'
-import Guide from './images/guide.png'
-import Note from './images/note.png'
-import Create from './images/create.png'
-import Myship from './images/myship.png'
-import Vector from './images/vector.png'
+import guide from './images/guide.png'
+import note from './images/note.png'
+import create from './images/create.png'
+import myship from './images/myship.png'
+import vector from './images/vector.png'
 
 export default function Home() {
   return (
     <main>
       <BackgroundWrapperTop>
-        <img className="vector" src={Vector} alt="" />
+        <img className="vector" src={vector} alt="" />
         <h3 className="headline">Dein Step By Step Import Guide</h3>
         <h3 className="sub_headline">Starte noch heute!</h3>
         <LinkBox>
           <NavLinkStyled to="/task/1">
-            <img className="guide-logo" src={Guide} alt="" />
+            <img
+              className="guide-logo"
+              src={guide}
+              alt="click to get the import guide"
+            />
           </NavLinkStyled>
           <NavLinkStyled to="/individual-notes">
-            <img className="note-logo" src={Note} alt="" />
+            <img
+              className="note-logo"
+              src={note}
+              alt="click to to get the note page"
+            />
           </NavLinkStyled>
         </LinkBox>
       </BackgroundWrapperTop>
       <BackgroundWrapperBottom>
         <NavLinkStyled to="/create-shipment">
-          <img className="create-logo" src={Create} alt="" />
+          <img
+            className="create-logo"
+            src={create}
+            alt="click to get to the create page"
+          />
         </NavLinkStyled>
         <NavLinkStyled to="/my-shipments">
-          <img className="myship-logo" src={Myship} alt="" />
+          <img
+            className="myship-logo"
+            src={myship}
+            alt=" click to get the my-shipment page"
+          />
         </NavLinkStyled>
       </BackgroundWrapperBottom>
     </main>
@@ -81,10 +97,6 @@ const BackgroundWrapperTop = styled.div`
   justify-content: space-around;
 
   h3 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.75rem;
-    font-weight: 500;
-    line-height: 1.5;
     position: absolute;
     margin-left: 1em;
   }
@@ -99,7 +111,7 @@ const BackgroundWrapperTop = styled.div`
 
   .sub_headline  {
     top: 160px;
-    color: #91adf1;
+    color: var(--blured-blue);
   }
 
   .vector {

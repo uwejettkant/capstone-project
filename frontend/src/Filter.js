@@ -13,7 +13,8 @@ const FilterStyled = styled.input`
   border-radius: 4px;
   border: solid 1px #446ddb;
   background-color: #173fac;
-  margin-left: 12px;
+  margin-left: 0.75em;
+
   color: #fff;
   font-size: 1rem;
   padding-left: 2em;

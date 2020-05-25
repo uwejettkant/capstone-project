@@ -132,12 +132,7 @@ const BackgroundWrapperTop = styled.div`
   background-image: linear-gradient(115deg, #2156e7 6%, #1345d0 93%);
 
   h3 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.75rem;
-    font-weight: 500;
-    line-height: 1.5;
-    letter-spacing: normal;
-    color: #91adf1;
+    color: var(--blured-blue);
     text-align: center;
     margin: 0;
     padding-top: 0.5em;
@@ -173,7 +168,7 @@ const LabelStyled = styled.label`
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.3px;
-  color: #222222;
+  color: var(--dark-text);
   text-align: start;
   margin: 0.75em 0.25em 0.25em 1.5em;
   align-self: start;
@@ -209,7 +204,7 @@ const LabelDate = styled.label`
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.3px;
-  color: #222222;
+  color: var(--dark-text);
   text-align: start;
   margin-top: 1em;
   align-self: start;

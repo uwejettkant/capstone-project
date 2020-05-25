@@ -70,7 +70,7 @@ const ButtonStyled = styled.button`
   width: 250px;
   height: 40px;
   border-radius: 4px;
-  background-color: #194cda;
+  background-color: var(--button-color);
   align-self: center;
   border: none;
 `

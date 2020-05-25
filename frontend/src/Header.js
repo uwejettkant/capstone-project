@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import Logo from './images/Logo.png'
+import logo from './images/Logo.png'
 
 export default function Header() {
   return (
     <LogoStyled>
-      <img src={Logo} alt="" />
+      <img src={logo} alt="" />
     </LogoStyled>
   )
 }
