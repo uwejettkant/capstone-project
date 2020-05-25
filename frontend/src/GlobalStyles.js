@@ -34,6 +34,6 @@ font-size: 1.75rem;
     --blured-blue: #91adf1;
     --dark-text: #222222;
     --button-color: #194cda;
-    --delete-buton:  #f25e5e;
+    --delete-button:  #f25e5e;
     }
 `

@@ -19,9 +19,9 @@ export default function NoteDescription({
           <Checkbox onClick={() => completeNote(index)} type="checkbox" />
         </label>
         <span className="note">{notes.value}</span>
-        <DescriptionButton onClick={() => removeNote(notes)}>
+        <DeleteButton onClick={() => removeNote(notes)}>
           <i className="fas fa-trash-alt"></i>
-        </DescriptionButton>
+        </DeleteButton>
       </MyNotes>
     </main>
   )
@@ -55,11 +55,11 @@ const MyNotes = styled.section`
   }
 `
 
-const DescriptionButton = styled.button`
+const DeleteButton = styled.button`
   border: none;
   font-size: 1rem;
   border: none;
   border-radius: 5px;
   background: #fff;
-  color: var(--delete-buton);
+  color: var(--delete-button);
 `
