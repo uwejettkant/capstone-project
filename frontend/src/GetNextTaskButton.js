@@ -10,16 +10,12 @@ export default function GetNextTaskButton({ onClick, defaultText }) {
 }
 
 const ButtonStyled = styled.button`
-  background: linear-gradient(45deg, #fff, #accbfa);
-  padding: 0.5em;
+  width: 100px;
+  height: 35px;
+  border-radius: 4px;
   border: none;
-  border-radius: 10px;
-  font-weight: bold;
-  color: #4287f5;
-  width: 175px;
-  margin-bottom: 1.25em;
-  margin: 0.5em;
-  font-size: 0.75rem;
+  background-color: var(--button-color);
+  color: #fff;
 
   &:active {
     transform: scale(1.1);

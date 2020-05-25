@@ -18,18 +18,18 @@ export default function ProgressBar({ percentage }) {
 }
 
 const ProgressWrapper = styled.div`
-  width: 250px;
+  width: 345px;
   height: 20px;
-  margin: 15px auto;
-  background: #8eb8fa;
-  border-radius: 10px;
-  box-shadow: inset 0 0 5px #1875c7;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px 0 rgba(168, 164, 164, 0.5);
+  background-color: #fff;
+  margin-top: 1em;
 `
 
 const ProgressLine = styled.div`
   background: #92f7cd;
   height: 100%;
+  border-radius: 4px;
   width: ${(props) => props.percentage}%;
-  border-radius: 10px;
   transition: width 0.5s ease-in-out;
 `
