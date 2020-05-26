@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react'
-import styled from 'styled-components/macro'
-import pallets from './images/pallets.jpg'
-import Search from './images/search-icon.png'
-import Filter from './Filter'
-import { db } from './firebase'
-import swal from 'sweetalert'
+import React, { useState, useEffect } from "react";
+import styled from "styled-components/macro";
+import pallets from "./images/pallets.jpg";
+import Search from "./images/search-icon.png";
+import Filter from "./Filter";
+import { db } from "./firebase";
+import swal from "sweetalert";
 
 export default function MyShipments() {
-  const [shipment, setShipment] = useState([])
-  const [search, setSearch] = useState('')
-  const [filteredShipments, setFilteredShipments] = useState([])
+  const [shipment, setShipment] = useState([]);
+  const [search, setSearch] = useState("");
+  const [filteredShipments, setFilteredShipments] = useState([]);
 
   useEffect(() => {
     setFilteredShipments(
@@ -20,49 +20,49 @@ export default function MyShipments() {
           ) ||
           shipment.Bl.toLowerCase().includes(search.toLowerCase()) ||
           shipment.Lieferant.toLowerCase().includes(search.toLowerCase())
-        )
+        );
       })
-    )
-  }, [search, shipment])
+    );
+  }, [search, shipment]);
 
   useEffect(() => {
-    db.collection('my-shipments').onSnapshot((snapshot) => {
+    db.collection("my-shipments").onSnapshot((snapshot) => {
       const getShipments = snapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
-      }))
-      setShipment(getShipments)
-    })
-  }, [])
+      }));
+      setShipment(getShipments);
+    });
+  }, []);
 
   function deleteShipment(shipment) {
     swal({
-      title: 'Bist du dir sicher?',
+      title: "Bist du dir sicher?",
       text:
-        'Wenn die Daten gelöscht sind, können sie nicht wieder hergestellt werden.',
-      icon: 'warning',
+        "Wenn die Daten gelöscht sind, können sie nicht wieder hergestellt werden.",
+      icon: "warning",
       buttons: true,
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        db.collection('my-shipments')
+        db.collection("my-shipments")
           .doc(shipment.id)
           .delete()
           .then(
-            swal('Ok. Deine Sendung wurde gelöscht!', {
-              icon: 'success',
+            swal("Ok. Deine Sendung wurde gelöscht!", {
+              icon: "success",
             })
           )
           .catch((error) =>
             alert(
-              'Oops etwas ist schief gelaufen. Bitte versuche es später noch einmal.',
+              "Oops etwas ist schief gelaufen. Bitte versuche es später noch einmal.",
               error
             )
-          )
+          );
       } else {
-        swal('Löschvorgang Abgebrochen')
+        swal("Löschvorgang Abgebrochen");
       }
-    })
+    });
   }
   return (
     <main>
@@ -81,18 +81,18 @@ export default function MyShipments() {
               <DataWrapper>
                 <p className="bl_no">BL Nr:</p>
                 <p className="bl_prop prop_global">{shipment.Bl}</p>
-                <p className="pallets">Paletten:</p>{' '}
+                <p className="pallets">Paletten:</p>{" "}
                 <p className="pllets_prop prop_global">
                   {shipment.Palettenanzahl}
                 </p>
-                <p className="supplier">Lieferant:</p>{' '}
+                <p className="supplier">Lieferant:</p>{" "}
                 <p className="supplier_prop prop_global">
-                  {' '}
+                  {" "}
                   {shipment.Lieferant}
                 </p>
-                <p className="desc">Ware:</p>{' '}
+                <p className="desc">Ware:</p>{" "}
                 <p className="desc_prop prop_global">
-                  {' '}
+                  {" "}
                   {shipment.Warenbeschreibung}
                 </p>
               </DataWrapper>
@@ -113,7 +113,7 @@ export default function MyShipments() {
         ))}
       </Wrapper>
     </main>
-  )
+  );
 }
 
 const BackgroundWrapperTop = styled.div`
@@ -133,7 +133,7 @@ const BackgroundWrapperTop = styled.div`
     top: 117px;
     left: 20px;
   }
-`
+`;
 
 const Wrapper = styled.section`
   width: 350px;
@@ -146,7 +146,7 @@ const Wrapper = styled.section`
   top: -250px;
   left: 12px;
   border: none;
-`
+`;
 
 const CardContainer = styled.section`
   grid-gap: 1em;
@@ -157,11 +157,11 @@ const CardContainer = styled.section`
   background-color: #fff;
   margin-bottom: 1em;
   padding: 0.5em;
-`
+`;
 
 const FlexWrapper = styled.div`
   display: flex;
-`
+`;
 const Imagewrapper = styled.div`
   grid-column: 1/2;
   width: 145px;
@@ -175,7 +175,7 @@ const Imagewrapper = styled.div`
     width: 100%;
     object-fit: cover;
   }
-`
+`;
 
 const DataWrapper = styled.section`
   display: grid;
@@ -244,7 +244,7 @@ const DataWrapper = styled.section`
     grid-column: 2/3;
     grid-row: 5/6;
   }
-`
+`;
 
 const DateWrapper = styled.div`
   display: grid;
@@ -252,7 +252,7 @@ const DateWrapper = styled.div`
   grid-template-rows: 25px;
   justify-content: center;
   align-items: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 0.8em;
   font-weight: 500;
   line-height: 1.42;
@@ -260,7 +260,7 @@ const DateWrapper = styled.div`
 
   .date_props {
     text-align: start;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 0.75rem;
     font-weight: 500;
     line-height: 1.42;
@@ -290,16 +290,16 @@ const DateWrapper = styled.div`
   p {
     margin: 0;
   }
-`
+`;
 const DeleteButton = styled.button`
   grid-column: 5/6;
   grid-row: 1/-1;
   background: transparent;
-  color: var(--delete-buton);
+  color: var(--delete-button);
   font-size: 1rem;
   border: none;
   border-radius: 5px;
   height: 25px;
   margin: 0;
   padding: 0;
-`
+`;

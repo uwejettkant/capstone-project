@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components/macro'
+import React from "react";
+import styled from "styled-components/macro";
 
 export default function NoteDescription({
   notes,
@@ -11,7 +11,7 @@ export default function NoteDescription({
     <main>
       <MyNotes
         style={{
-          textDecorationThickness: notes.isCompleted ? '0.1em' : '',
+          textDecorationThickness: notes.isCompleted ? "0.1em" : "",
         }}
         notes={notes}
       >
@@ -24,7 +24,7 @@ export default function NoteDescription({
         </DeleteButton>
       </MyNotes>
     </main>
-  )
+  );
 }
 
 const Checkbox = styled.input`
@@ -35,11 +35,11 @@ const Checkbox = styled.input`
   transition: all 0.2s ease-in-out;
   border: 2px solid #ececec;
   border-radius: 0.25rem;
-`
+`;
 
 const MyNotes = styled.section`
   text-decoration: ${(props) =>
-    props.notes.isCompleted ? 'line-through' : ''};
+    props.notes.isCompleted ? "line-through" : ""};
   color: #000;
   font-size: 1.15rem;
   font-weight: bold;
@@ -53,7 +53,7 @@ const MyNotes = styled.section`
   .note {
     font-weight: 300;
   }
-`
+`;
 
 const DeleteButton = styled.button`
   border: none;
@@ -62,4 +62,4 @@ const DeleteButton = styled.button`
   border-radius: 5px;
   background: #fff;
   color: var(--delete-button);
-`
+`;

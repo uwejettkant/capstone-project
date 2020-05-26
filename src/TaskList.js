@@ -87,7 +87,11 @@ export default function TaskList() {
                     )}
                   </LinkWrapper>
                   <NavigationWrapper>
-                    <Link to={`/task/${userTask[index].id}`}>
+                    <Link
+                      to={`/task/${
+                        userTask[index === 0 ? index : index - 1].id
+                      }`}
+                    >
                       {task.id === 1 || (
                         <GetNextTaskButton
                           defaultText="Zurück"
