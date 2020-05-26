@@ -1,6 +1,6 @@
 import React from 'react'
 import MyShipments from './MyShipments'
-import withMobileWrapper from '../.storybook/preview'
+import withMobileWrapper from '../../.storybook/preview'
 
 export default {
   component: 'MyShipments',

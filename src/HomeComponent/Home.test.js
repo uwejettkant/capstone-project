@@ -13,15 +13,6 @@ test('render all Text of the component', () => {
     container
   )
   expect(container.textContent).toBe(
-    'Schritt für Schritt AnleitungMeine NotizenErstelle Dein ShipmentDeine Seefracht Sendungen'
+    'Dein Step By Step Import GuideStarte noch heute!'
   )
-})
-
-test('render text of one button', () => {
-  const { getByText } = render(
-    <MemoryRouter>
-      <Home />
-    </MemoryRouter>
-  )
-  expect(getByText('Schritt für Schritt Anleitung')).toBeInTheDocument()
 })

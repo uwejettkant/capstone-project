@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Notes from './Notes'
 import NoteForm from './NoteForm'
 import styled from 'styled-components/macro'
-import { db } from './firebase'
+import { db } from '../firebase'
 
 export default function IndividualNotes() {
   const [notes, setNotes] = useState([])

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components/macro'
-import pallets from './images/pallets.jpg'
-import Search from './images/search-icon.png'
+import pallets from '../images/pallets.jpg'
+import Search from '../images/search-icon.png'
 import Filter from './Filter'
-import { db } from './firebase'
+import { db } from '../firebase'
 import swal from 'sweetalert'
 
 export default function MyShipments() {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components/macro'
-import { db } from './firebase'
+import { db } from '../firebase'
 import swal from 'sweetalert'
 
 export default function CreateShipment() {
@@ -54,7 +54,7 @@ export default function CreateShipment() {
             value={shipmentData.Bl}
             onChange={updateEntry}
             placeholder="Bl Nr."
-            maxLength="40"
+            maxLength="15"
             required
           />
 
@@ -66,7 +66,7 @@ export default function CreateShipment() {
             value={shipmentData.Palettenanzahl}
             onChange={updateEntry}
             placeholder="Palettenanzahl"
-            maxLength="40"
+            maxLength="15"
             required
           />
 
@@ -78,7 +78,7 @@ export default function CreateShipment() {
             value={shipmentData.Lieferant}
             onChange={updateEntry}
             placeholder="Lieferant"
-            maxLength="40"
+            maxLength="15"
             required
           />
 
@@ -92,7 +92,7 @@ export default function CreateShipment() {
             value={shipmentData.Warenbeschreibung}
             onChange={updateEntry}
             placeholder="Warenbeschreibung"
-            maxLength="40"
+            maxLength="15"
             required
           />
           <DateWrapper>

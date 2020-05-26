@@ -10,6 +10,6 @@ test('renders Placeholder first input', () => {
 
 test('renders Placeholder last input', () => {
   const { getByPlaceholderText } = render(<CreateShipment />)
-  const element = getByPlaceholderText(/eta/i)
+  const element = getByPlaceholderText(/Warenbeschreibung/i)
   expect(element).toBeInTheDocument()
 })

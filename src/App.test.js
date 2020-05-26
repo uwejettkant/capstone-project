@@ -9,6 +9,6 @@ test('renders app name', () => {
       <App />
     </MemoryRouter>
   )
-  const linkElement = getByText(/Import Ganz Einfach/i)
+  const linkElement = getByText(/Dein Step By Step Import Guide/i)
   expect(linkElement).toBeInTheDocument()
 })

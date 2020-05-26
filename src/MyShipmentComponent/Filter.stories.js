@@ -1,6 +1,6 @@
 import React from 'react'
 import Filter from './Filter'
-import withMobileWrapper from '../.storybook/preview'
+import withMobileWrapper from '../../.storybook/preview'
 
 export default {
   component: 'Filter',

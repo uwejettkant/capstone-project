@@ -1,6 +1,6 @@
 import React from 'react'
 import Notes from './Notes'
-import withMobileWrapper from '../.storybook/preview'
+import withMobileWrapper from '../../.storybook/preview'
 
 export default {
   component: 'Notes',
@@ -8,4 +8,4 @@ export default {
   decorators: [withMobileWrapper],
 }
 
-export const buttons = () => <Notes notice />
+export const buttons = () => <Notes />

@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 import { NavLink } from 'react-router-dom'
-import guide from './images/guide.png'
-import note from './images/note.png'
-import create from './images/create.png'
-import myship from './images/myship.png'
-import vector from './images/vector.png'
+import guide from '../images/guide.png'
+import note from '../images/note.png'
+import create from '../images/create.png'
+import myship from '../images/myship.png'
+import vector from '../images/vector.png'
 
 export default function Home() {
   return (

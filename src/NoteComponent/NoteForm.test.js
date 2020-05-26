@@ -4,6 +4,6 @@ import NoteForm from './NoteForm'
 
 test('renders placeholder text', () => {
   const { getByPlaceholderText } = render(<NoteForm />)
-  const element = getByPlaceholderText(/max. 40 Zeichen/i)
+  const element = getByPlaceholderText(/max. 20 Zeichen/i)
   expect(element).toBeInTheDocument()
 })

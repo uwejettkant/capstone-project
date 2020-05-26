@@ -1,6 +1,6 @@
 import React from 'react'
 import CreateShipment from './CreateShipment'
-import withMobileWrapper from '../.storybook/preview'
+import withMobileWrapper from '../../.storybook/preview'
 
 export default {
   component: 'CreateShipment',

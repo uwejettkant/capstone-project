@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components/macro'
-import { db } from './firebase'
-import CreateButton from './images/createbutton.png'
+import { db } from '../firebase'
+import CreateButton from '../images/createbutton.png'
 
 export default function NoteForm({ defaultText }) {
   const [value, setValue] = useState('')

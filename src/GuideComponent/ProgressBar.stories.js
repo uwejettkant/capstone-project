@@ -1,6 +1,6 @@
 import React from 'react'
 import ProgressBar from './ProgressBar'
-import withMobileWrapper from '../.storybook/preview'
+import withMobileWrapper from '../../.storybook/preview'
 
 export default {
   component: 'ProgressBar',
