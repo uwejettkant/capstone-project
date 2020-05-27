@@ -20,13 +20,15 @@ When viewing this app, please switch your browser to iPhone 6/7/8 mode, as it wa
 - cypress
 - jest testing-library
 
+### Setup the project
+
 1. clone repository
 
-### `git@github.com:uwejettkant/captone-project.git`
+`git@github.com:uwejettkant/captone-project.git`
 
 2. Install dependencies
 
-### `npm start`
+`npm start`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -34,27 +36,31 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-3. Install and initialize Firebase CLI. For more information check out the firebase CLI documentation.
+3. Run Storybook with
 
-### `npm install -g firebase-tools`
+`npm run storybook`
 
-4. Run Storybook with
+4. Run React Testing Library & Jest with
 
-### `npm run storybook`
-
-5. Run React Testing Library & Jest with
-
-### `npm test`
+`npm test`
 
 Launches the test runner in the interactive watch mode.<br />
 
-6. Run Cypress with
+5. Run Cypress with
 
-### `npm run cypress`
+`npm run cypress`
 
-7. Create a build ready for deploying
+6. Install and initialize Firebase CLI. For more information check out the firebase CLI documentation.
 
-### `npm run build`
+`npm install -g firebase-tools`
+
+7. Firestore Backend
+
+You have to setup your own firestore backend.
+
+8. Create a build ready for deploying
+
+`npm run build`
 
 Builds the app for production to the `build` folder.<br />
 Delete the actual 'dist' folder and rename the 'build' into dist!
@@ -65,9 +71,9 @@ Your app is ready to be deployed!
 
 8. Deploy the build
 
-### firebase deploy
+`firebase deploy`
 
-Deploys the current 'dist' folder. You can watch the deployment in the browser:
+Deploys the current 'dist' folder. You can watch the deployment of this repository in the browser (iPhone 6/7/8 mobile layout):
 
 [deployment](https://https://import-ganz-einfach-b9ac3.web.app/)
 
