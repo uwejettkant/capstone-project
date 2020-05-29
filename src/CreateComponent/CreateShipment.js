@@ -45,7 +45,7 @@ export default function CreateShipment() {
         <h3>Erstelle Dein Shipment</h3>
       </BackgroundWrapperTop>
       <InputWrapper>
-        <FormStyled onSubmit={handleSubmit}>
+        <FormStyled onSubmit={handleSubmit} data-cy="create_shipment">
           <LabelStyled htmlFor="Bl">Bl Nr.:</LabelStyled>
           <InputStyled
             id="Bl"
