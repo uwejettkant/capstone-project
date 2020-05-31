@@ -21,9 +21,10 @@ export default function NoteForm({ defaultText }) {
   }
 
   return (
-    <FormStyled onSubmit={handleSubmit}>
+    <FormStyled onSubmit={handleSubmit} data-cy="create_note">
       <LabelStyled htmlFor="name">{defaultText}</LabelStyled>
       <InputStyled
+        id="note"
         type="text"
         name={defaultText}
         placeholder="max. 20 Zeichen"
