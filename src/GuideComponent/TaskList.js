@@ -107,6 +107,7 @@ export default function TaskList() {
                       {task.id === 16 || (
                         <GetNextTaskButton
                           defaultText="Weiter"
+                          className="btn-next"
                           onClick={() =>
                             setProgress({
                               percentage: progress.percentage + 6.66,

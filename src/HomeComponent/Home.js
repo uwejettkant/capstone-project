@@ -15,14 +15,14 @@ export default function Home() {
         <h3 className="headline">Dein Step By Step Import Guide</h3>
         <h3 className="sub_headline">Starte noch heute!</h3>
         <LinkBox>
-          <NavLinkStyled to="/task/1">
+          <NavLinkStyled to="/task/1" data-cy="guide_icon">
             <img
               className="guide-logo"
               src={guide}
               alt="click to get the import guide"
             />
           </NavLinkStyled>
-          <NavLinkStyled to="/individual-notes">
+          <NavLinkStyled to="/individual-notes" data-cy="note_icon">
             <img
               className="note-logo"
               src={note}
@@ -32,14 +32,14 @@ export default function Home() {
         </LinkBox>
       </BackgroundWrapperTop>
       <BackgroundWrapperBottom>
-        <NavLinkStyled to="/create-shipment">
+        <NavLinkStyled to="/create-shipment" data-cy="create_icon">
           <img
             className="create-logo"
             src={create}
             alt="click to get to the create page"
           />
         </NavLinkStyled>
-        <NavLinkStyled to="/my-shipments">
+        <NavLinkStyled to="/my-shipments" data-cy="shipments_icon">
           <img
             className="myship-logo"
             src={myship}
