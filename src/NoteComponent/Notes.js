@@ -6,12 +6,16 @@ export default function Notes({ notes, index, completeNote, removeNote }) {
     <main>
       <MyNotes
         style={{
-          textDecorationThickness: notes.isCompleted ? '0.1em' : '',
+          textDecorationThickness: notes.isCompleted ? '0.1em' : null,
         }}
         notes={notes}
       >
         <label className="checkbox" htmlFor="checkbox">
-          <Checkbox onClick={() => completeNote(index)} type="checkbox" />
+          <Checkbox
+            onClick={() => completeNote(index)}
+            type="checkbox"
+            checked={notes.isCompleted}
+          />
         </label>
         <span className="note">{notes.value}</span>
         <DeleteButton onClick={() => removeNote(notes)}>
@@ -34,7 +38,7 @@ const Checkbox = styled.input`
 
 const MyNotes = styled.section`
   text-decoration: ${(props) =>
-    props.notes.isCompleted ? 'line-through' : ''};
+    props.notes.isCompleted ? 'line-through' : null};
   color: #000;
   font-size: 1.15rem;
   font-weight: bold;

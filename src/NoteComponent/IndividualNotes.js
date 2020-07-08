@@ -19,7 +19,7 @@ export default function IndividualNotes() {
 
   function completeNote(index) {
     const newNotice = [...notes]
-    newNotice[index].isCompleted = true
+    newNotice[index].isCompleted = !newNotice[index].isCompleted
     setNotes(newNotice)
   }
 
