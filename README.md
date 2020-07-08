@@ -1,5 +1,7 @@
 ## Easy Import
 
+![](easyimport.gif)
+
 This app is a step by step guide how to import physical products worldwide to Germany by ocean freight. Logistics is a complex topic in which you can get lost easily. The central concept of this app is to show you what to do next and in which phase of the import process you. You get short and pregnant topics that allow you to do your research and take action to the next step.
 
 The app offers useful links to resources, websites, etc. For example, if you want to source a product, but you have no clue where to find the supplier? Well, the app connects you with Asia`s biggest trading platform.
